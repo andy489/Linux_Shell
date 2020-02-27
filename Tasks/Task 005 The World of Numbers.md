@@ -15,7 +15,7 @@ Two lines containing one integer each ( and , respectively).
 
 #### Output Format
 
-Four lines containing the sum (), difference (<img src="https://latex.codecogs.com/svg.latex?\Large&space;X+Y">), product (<img src="https://latex.codecogs.com/svg.latex?\Large&space;X-Y">), and quotient (), respectively. 
+Four lines containing the sum (<img src="https://latex.codecogs.com/svg.latex?\Large&space;X+Y">), difference (<img src="https://latex.codecogs.com/svg.latex?\Large&space;X-Y">), product (<img src="https://latex.codecogs.com/svg.latex?\Large&space;X\times{Y}">), and quotient (<img src="https://latex.codecogs.com/svg.latex?\Large&space;X\div{Y}">), respectively.<br>
 (While computing the quotient, print only the integer part.)
 
 #### Sample Input
