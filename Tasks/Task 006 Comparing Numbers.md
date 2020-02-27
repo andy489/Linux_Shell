@@ -2,8 +2,8 @@
 
 [Judge System](https://www.hackerrank.com/challenges/bash-tutorials---comparing-numbers/problem)
 
-Given two integers, <img src="https://latex.codecogs.com/svg.latex?\Large&space;X"> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y">, identify whether  or  or .
-Exactly one of the following lines: 
+Given two integers, <img src="https://latex.codecogs.com/svg.latex?\Large&space;X"> and <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y">, identify whether <img src="https://latex.codecogs.com/svg.latex?\Large&space;X<Y"> or <img src="https://latex.codecogs.com/svg.latex?\Large&space;X>Y"> or <img src="https://latex.codecogs.com/svg.latex?\Large&space;X=Y">.<br>
+Exactly one of the following lines: <br>
 - X is less than Y 
 - X is greater than Y 
 - X is equal to Y
