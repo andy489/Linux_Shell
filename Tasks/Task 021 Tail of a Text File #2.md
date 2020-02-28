@@ -12,9 +12,7 @@ A text file.
 
 #### Output Format
 
-Output the last
-
-characters of the text file.
+Output the last <img src="https://latex.codecogs.com/svg.latex?\Large&space;20"> characters of the text file.
 
 #### Sample Input
 
