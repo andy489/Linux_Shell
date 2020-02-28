@@ -1,6 +1,6 @@
 ## Cut #1
 
-[Judge System]()
+[Judge System](https://www.hackerrank.com/challenges/text-processing-cut-1/problem)
 
 Given <img src="https://latex.codecogs.com/svg.latex?\Large&space;N"> lines of input, print the <img src="https://latex.codecogs.com/svg.latex?\Large&space;3^{rd}"> character from each line as a new line of output. It is guaranteed that each of the <img src="https://latex.codecogs.com/svg.latex?\Large&space;n"> lines of input will have a <img src="https://latex.codecogs.com/svg.latex?\Large&space;3^{rd}"> character.
 #### Input Format
