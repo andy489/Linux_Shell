@@ -32,7 +32,7 @@ One word: either "SCALENE" or "EQUILATERAL" or "ISOSCELES" (quotation marks excl
 ```
 SCALENE
 ```
-####cSample Output 2
+#### Sample Output 2
 ```
 EQUILATERAL  
 ```
