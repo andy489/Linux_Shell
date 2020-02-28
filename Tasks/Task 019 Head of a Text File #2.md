@@ -2,7 +2,7 @@
 
 [Judge System](https://www.hackerrank.com/challenges/text-processing-head-2/problem)
 
-In this challenge, we practice using the head command to display the first <img src="https://latex.codecogs.com/svg.latex?\Large&space;20"> characters of a text file.
+In this challenge, we practice using the head command to display the first <img src="https://latex.codecogs.com/svg.latex?\Large&space;n"> characters of a text file.
 
 Display the first <img src="https://latex.codecogs.com/svg.latex?\Large&space;20"> characters of an input file.
 
