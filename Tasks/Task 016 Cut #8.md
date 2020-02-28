@@ -1,6 +1,6 @@
 ## Cut # 8
 
-[Judge System] (https://www.hackerrank.com/challenges/text-processing-cut-8/problem)
+[Judge System](https://www.hackerrank.com/challenges/text-processing-cut-8/problem)
 
 Given a sentence, identify and display its first three words. Assume that the space (' ') is the only delimiter between words.
 
