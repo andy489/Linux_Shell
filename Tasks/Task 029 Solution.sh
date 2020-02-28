@@ -17,3 +17,9 @@ OR
 */
 
 sort -n -r
+
+/*
+OR
+*/
+
+sort -n | tac
