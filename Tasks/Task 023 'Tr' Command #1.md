@@ -17,10 +17,13 @@ Output the text with all parentheses <img src="https://latex.codecogs.com/svg.la
 
 #### Sample Input
 
+````
 int i=(int)5.8
 (23 + 5)*2
+````
+#### Sample Output
 
-Sample Output
-
+````
 int i=[int]5.8
 [23 + 5]*2
+````
