@@ -1,4 +1,4 @@
-## Cut#5
+## Cut #5
 
 [Judge System](https://www.hackerrank.com/challenges/text-processing-cut-5/problem)
 
