@@ -13,7 +13,7 @@ Before using **grep** it is recommended that one should become familiar with reg
 #### Recommeded References 
 
 [15 Practical Grep Command Examples](https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/)<br>
-[TLDP Examples for Grep](https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/)
+[TLDP Examples for Grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html)
 
 #### Current Task
 
