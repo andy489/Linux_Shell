@@ -32,7 +32,8 @@ A text file with multiple lines will be piped to your command through STDIN.
 Display the required lines without any changes to their relative ordering.
 
 #### Sample Input
-````
+
+```
 From fairest creatures we desire increase,
 That thereby beauty's rose might never die,
 But as the riper should by time decease,
