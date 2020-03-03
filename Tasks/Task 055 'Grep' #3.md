@@ -6,7 +6,7 @@
 In this challenge, we practice using the grep command to find specified strings or regular expressions.
 
 #### Resources
-Grep is a multi-purpose search tool that is used to find specified strings or regular expressions. A variety of options exist that makes it possible to use this command in several different ways and to handle many different situations. For example, one might opt for a case-insensitive search, or to display only the fragment matching the specified search pattern. The command could also be used to display only the line number of an input file where the specified string or regular expression has been found.
+Grep is a multi-purpose search tool that is used to find specified strings or regular expressions. A variety of options exist that makes it possible to use this command in several different ways and to handle many different situations. For example, one might opt for a case-insensitive search, or to display **only** the fragment matching the specified search pattern. The command could also be used to display only the line number of an input file where the specified string or regular expression has been found.
 
 Before using grep, we recommend becoming familiar with regular expressions to be able to harness the command to its fullest.
 
@@ -54,7 +54,7 @@ How much more praise deserved thy beauty's use,
 If thou couldst answer 'This fair child of mine
 Shall sum my count, and make my old excuse'
 ````
-####v Sample Output
+#### Sample Output
 ````
 From fairest creatures we desire increase,
 But as the riper should by time decease,
