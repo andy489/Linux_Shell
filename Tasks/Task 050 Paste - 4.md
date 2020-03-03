@@ -2,7 +2,7 @@
 
 [Judge System](https://www.hackerrank.com/challenges/paste-4/problem)
 
-Given a CSV file where ehttps://www.hackerrank.com/challenges/paste-4/problem)ach row contains the name of a city and its state separated by a comma, your task is to restructure the file in such a way, that three consecutive rows are folded into one, and separated by tab.
+Given a CSV file where each row contains the name of a city and its state separated by a comma, your task is to restructure the file in such a way, that three consecutive rows are folded into one, and separated by tab.
 
 #### Input Format
 
