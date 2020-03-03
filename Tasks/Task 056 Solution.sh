@@ -1,1 +1,1 @@
-sed 's/the/this/'
+sed 's/the /this /'
