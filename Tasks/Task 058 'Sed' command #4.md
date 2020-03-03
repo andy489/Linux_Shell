@@ -52,7 +52,7 @@ denotes a decimal digit (i.e.,<img src="https://latex.codecogs.com/svg.latex?\La
 
 #### Constraints
 
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;1\le[n}\le{20}">; note that the value of <img src="https://latex.codecogs.com/svg.latex?\Large&space;n"> does not matter when writing your command.
+- <img src="https://latex.codecogs.com/svg.latex?\Large&space;1\le{n}\le{20}">; note that the value of <img src="https://latex.codecogs.com/svg.latex?\Large&space;n"> does not matter when writing your command.
 
 #### Output Format
 
