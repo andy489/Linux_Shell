@@ -31,7 +31,10 @@ Each line will be in the following format:
 #### Output Format
 
 For each student, if one or more of the three scores is missing, display:
+
+```
 Not all scores are available for [Identifier]
+```
 
 #### Sample Input
 
@@ -43,7 +46,11 @@ D 99 88 76
 ```
 
 #### Sample Output
+
+```
 Not all scores are available for B
 Not all scores are available for C
-Explanation
-Only  scores have been provided for student B and student C.
+```
+
+#### Explanation
+Only <img src="https://latex.codecogs.com/svg.latex?\Large&space;2"> scores have been provided for student B and student C.
