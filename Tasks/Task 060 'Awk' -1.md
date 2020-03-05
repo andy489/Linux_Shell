@@ -24,8 +24,8 @@ Your task is to identify those lines that do not contain all three scores for st
 
 #### Input Format
 
-There will be no more than  rows of data. 
-Each line will be in the following format: 
+There will be no more than <img src="https://latex.codecogs.com/svg.latex?\Large&space;10"> rows of data.<br>
+Each line will be in the following format:<br>
 [Identifier][English Score][Math Score][Science Score]
 
 #### Output Format
