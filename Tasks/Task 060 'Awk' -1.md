@@ -14,7 +14,7 @@ The awk interpreter may be used for a lot of text-munging and data-processing ta
 
 The following links show examples with awk:
 
-[Print Examples](https://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/)
+[Print Examples](https://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/)<br>
 [Conditionals with Awk](https://www.thegeekstuff.com/2010/02/awk-conditional-statements/)
 
 #### Task 
