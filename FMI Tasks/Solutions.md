@@ -1,4 +1,6 @@
-**Задаза 1.** Даден е текстов файл с име <img src="https://latex.codecogs.com/svg.latex?\Large&space;philip-j-fry.txt">. Напишегте shell script и/или серия от команди, които извеждат броя редове, съдържащи поне една
+**Задаза 1.** Даден е текстов файл с име <img src="https://latex.codecogs.com/svg.latex?\Large&space;philip-j-fry.txt">. Напишегте shell script и/или серия от команди, които извеждат броя редове, съдържащи поне една четна цифра и несъдържщи малка латинска буква от <img src="https://latex.codecogs.com/svg.latex?\Large&space;a"> до <img src="https://latex.codecogs.com/svg.latex?\Large&space;w">.
+
+Примерно съдържание на файла:
 ```
 123abv123
 123zz123
