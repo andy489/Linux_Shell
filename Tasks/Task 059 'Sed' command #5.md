@@ -36,8 +36,8 @@ My favorite programming {editor} is Emacs. Another {editor} I like is Vim.
 
 Some references for learning about **sed** have been included: 
 
-[Sed - An Introduction and a tutorial](https://www.grymoire.com/Unix/Sed.html#uh-10a)
-[The TLDP Guide](http://tldp.org/LDP/abs/html/x23170.html)
+[Sed - An Introduction and a tutorial](https://www.grymoire.com/Unix/Sed.html#uh-10a)<br>
+[The TLDP Guide](http://tldp.org/LDP/abs/html/x23170.html)<br>
 [Some Practical Examples](https://www.folkstalk.com/2012/01/sed-command-in-unix-examples.html)
 
 #### Task
