@@ -12,7 +12,7 @@ A text file.
 
 #### Output Format
 
-Output the first <img src="https://latex.codecogs.com/svg.latex?\Large&space;20"> lines of the given text file.
+Output the first <img src="https://latex.codecogs.com/svg.latex?20"> lines of the given text file.
 
 #### Sample Input
 
