@@ -2,9 +2,9 @@
 
 [Judge System](https://www.hackerrank.com/challenges/text-processing-head-1/problem)
 
-In this challenge, we practice using the head command to display the first <img src="https://latex.codecogs.com/svg.latex?\Large&space;n"> lines of a text file.
+In this challenge, we practice using the head command to display the first <img src="https://latex.codecogs.com/svg.latex?n"> lines of a text file.
 
-Display the first <img src="https://latex.codecogs.com/svg.latex?\Large&space;20"> lines of an input file.
+Display the first <img src="https://latex.codecogs.com/svg.latex?20"> lines of an input file.
 
 #### Input Format
 
