@@ -38,7 +38,9 @@ find /home/SI -maxdepth 1 -type d - newerct '@1551168000' -not -newerct '@155117
 Втори начин:
 
 ```sh
-find /home/SI -maxdepth 1 -type d -printf "%C@ %p\n" | awk '$1 > 1551168000 && $1 < 1551176100 {for(i=2;i<NF;++i)printf "$i ", printf "$NF\n"}' ...further process
+find /home/SI -maxdepth 1 -type d -printf "%C@ %p\n" |\
+awk '$1 > 1551168000 && $1 < 1551176100 {for(i=2;i<NF;++i)printf "$i ", printf "$NF\n"}' \
+...further process
 ```
 
 Трети начин:
