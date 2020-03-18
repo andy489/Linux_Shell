@@ -3,7 +3,7 @@
 *Примерно съдържание на файла:*
 
 ```
-с45194:ь:1255:502:Elizabet Mihaylova, Inf, k3, g1:/home/Inf/s45194:/bin/bash
+с45194:x:1255:502:Elizabet Mihaylova, Inf, k3, g1:/home/Inf/s45194:/bin/bash
 s45139:x:1261:502:Vasilena Peycheva:/home/Inf/s45139:/bin/bash
 s81257:x:1079:503:Vasilena Nikolova, KN, 2kurs, 5gr:/home/KN/s81257:/bin/bash
 s81374:x:1117:502:Ivan Kamburov, KN, 2kurs, 7 gr:/home/KN/s81374:/bin/bash
@@ -23,8 +23,18 @@ s45216:x:1235:502:Aleksandar Yavashev, Inf, k3, g3:/home/Inf/s45216:/bin/bash
 
 **Решение:**
 
+
+Първи начин:
+
 ```sh
 grep '\/Inf\/' /etc/passwd |\
-grep -E '[[:upper:]][[:lower:]]* [[:upper:]][[:lower:]]*a(,|:) |\
+grep -E '[[:upper:]][[:lower:]]* [[:upper:]][[:lower:]]*a(,|:)' |\
 cut -c3,4 | uniq -c | sort -rn'
+```
+
+Втори начин:
+
+```sh
+cat f2 | fgrep '/Inf/' | cut -d':' -f 1-5 | cut -d',' -f1 | egrep "a$" |\
+cut -d':' -f1 | cut -c 2- | cut -c 2-3 | sort | uniq -c | sort -n | tail -n 1
 ```
