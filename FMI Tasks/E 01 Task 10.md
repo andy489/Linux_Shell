@@ -15,7 +15,7 @@ s855287:x:1195:504:Vaska Kichukova,SI,2,5:/home/SI/s855287:/bin/bash
 
 *Примерен изход:*
 
-```
+```sh
 sed -n '201,$p' f4 | awk 'BEGIN{FS="[,:]"} $0~/\/SI\// {print $1,$5,$(NF-1)}' |\
 cut -c2- | sort -t' ' -k1 | cut -d' ' -f2-
 ```
