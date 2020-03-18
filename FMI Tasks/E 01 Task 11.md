@@ -47,5 +47,6 @@ awk '$1 > 1551168000 && $1 < 1551176100 {for(i=2;i<NF;++i)printf "$i ", printf "
 
 ```sh
 egrep '^([^:]*:[^:]*){4}:/home/SI/' /etc/passwd | cut -d':' -f6 | xargs gstat -c "%Z %n\n" |\
-egrep "$(echo {1551168000..1551176100} | tr ' ' '|')" | cut -d' ' -f2 | grep -f - /et/passwd | tr ':' '\t' | cut -f1,5 | cut -c2-  
+egrep "$(echo {1551168000..1551176100} | tr ' ' '|')" | cut -d' ' -f2 | grep -f - /et/passwd |\
+tr ':' '\t' | cut -f1,5 | cut -c2-  
 ```
