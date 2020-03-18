@@ -35,6 +35,6 @@ cut -c3,4 | uniq -c | sort -rn'
 Втори начин:
 
 ```sh
-cat f2 | fgrep '/Inf/' | cut -d':' -f 1-5 | cut -d',' -f1 | egrep "a$" |\
+cat /etc/passwd | fgrep '/Inf/' | cut -d':' -f 1-5 | cut -d',' -f1 | egrep "a$" |\
 cut -d':' -f1 | cut -c 2- | cut -c 2-3 | sort | uniq -c | sort -n | tail -n 1
 ```
