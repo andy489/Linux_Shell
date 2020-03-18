@@ -3,7 +3,7 @@
 **Решение:**
 
 ```sh
-find ~pesho -maxdepth 2 -printf "%i %T@ %n\n" 2>/dev/null |\
+find ~pesho -type f 2>/dev/null -printf "%i %T@ %n\n"  |\
 awk '$3>1 {print$2,$3}' |\
 sort -rn -t' ' -k2 | head -1 | awk '{print $1}'
 ```
