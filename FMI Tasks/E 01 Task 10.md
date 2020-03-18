@@ -27,7 +27,7 @@ Vaska Kichukova /home/SI/s855287
 
 ```sh
 sed -n '201,$p' f4 | awk 'BEGIN{FS="[,:]"} $0~/\/SI\// {print $1,$5,$(NF-1)}' |\
-cut -c2- | sort -t' ' -k1 | cut -d' ' -f2-
+cut -c2- | sort -t' ' -k1 | cut -d' ' -f2- | sed 's/ /:/2'
 ```
 
 *За тестване може да сложим в sed командата вместо 201 -> 1*
