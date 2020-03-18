@@ -5,5 +5,5 @@
 **Решение:**
 
 ```sh
-find / -user $(whoami) 2>/dev/null | wc -l
+find / -user "$(whoami)" 2>/dev/null | wc -l
 ```
