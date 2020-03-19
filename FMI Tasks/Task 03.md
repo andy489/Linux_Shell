@@ -44,9 +44,3 @@ sort -n | uniq -c | sort -bnr -t' ' -k1 | head
   12 Service
    9 Kerberos
 ```
-
-Трети начин:
-
-```sh
-grep -o -E '\w+' /etc/passwd | sort | uniq -c | sort -rn | head
-```
