@@ -9,7 +9,7 @@ done
 
 seq 1 50
 
-OR
+# ---- OR
 
 for ((i=1; i<=50; i=i+1))
 do
