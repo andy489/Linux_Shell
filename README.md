@@ -2,6 +2,19 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
+Text Processing|[Cut #1](https://www.hackerrank.com/challenges/text-processing-cut-1/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%233.sh)
+Text Processing|[Cut #2](https://www.hackerrank.com/challenges/text-processing-cut-2/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%232.sh)
+Text Processiing|[Cut #3](https://www.hackerrank.com/challenges/text-processing-cut-3/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%233.sh)
+Text Processing|[Cut #4](https://www.hackerrank.com/challenges/text-processing-cut-4/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%234.sh)
+Text Processing|[Cut #5](https://www.hackerrank.com/challenges/text-processing-cut-5/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%235.sh)
+Text Processing|[Cut #6](https://www.hackerrank.com/challenges/text-processing-cut-6/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%236.sh)
+Text Processing|[Cut #7](https://www.hackerrank.com/challenges/text-processing-cut-7/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%237.sh)
+Text Processing|[Cut #8](https://www.hackerrank.com/challenges/text-processing-cut-8/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%238.sh)
+Text Processing|[Cut #9](https://www.hackerrank.com/challenges/text-processing-cut-9/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%239.sh)
+Text Processing|[Head of a Text File #1](https://www.hackerrank.com/challenges/text-processing-head-1/problem)|2|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Head%20of%20a%20Text%20File%20%231.sh)
+Text Processing|[Head of a Text File #2](https://www.hackerrank.com/challenges/text-processing-head-2/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Head%20of%20a%20Text%20File%20%232.sh)
+Text Processing|[Tail of a Text File #1](https://www.hackerrank.com/challenges/text-processing-tail-1/problem)|2|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Tail%20of%20a%20Text%20File%20%231.sh)
+Text Processing|[Tail of a Text File #2](https://www.hackerrank.com/challenges/text-processing-tail-2/problem)|2|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Tail%20of%20a%20Text%20File%20%232.sh)
 Bash|[Let's Echo](https://www.hackerrank.com/challenges/bash-tutorials-lets-echo/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Bash/Let's%20Echo.sh)
 Bash|[A Personalized Echo](https://www.hackerrank.com/challenges/bash-tutorials---a-personalized-echo/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Bash/A%20Personalized%20Echo.sh)
 Bash|[Looping with Numbers](https://www.hackerrank.com/challenges/bash-tutorials---looping-with-numbers/problem)|2|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Bash/Looping%20with%20Numbers.sh)
@@ -9,3 +22,4 @@ Bash|[The World of Numbers](https://www.hackerrank.com/challenges/bash-tutorials
 Bash|[Looping and Skipping](https://www.hackerrank.com/challenges/bash-tutorials---looping-and-skipping/problem)|2|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Bash/Looping%20and%20Skipping.sh)
 Bash|[Comparing Numbers](https://www.hackerrank.com/challenges/bash-tutorials---comparing-numbers/problem)|3|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Bash/Comparing%20Numbers.sh)
 Bash|[Getting started with conditionals](https://www.hackerrank.com/challenges/bash-tutorials---getting-started-with-conditionals/problem)|3|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Bash/Getting%20started%20with%20conditionals.sh)
+Bash|[More on Conditionals](https://www.hackerrank.com/challenges/bash-tutorials---more-on-conditionals/problem)|3|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Bash/More%20on%20Conditionals.sh)
