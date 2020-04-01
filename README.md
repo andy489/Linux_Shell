@@ -2,6 +2,8 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
+Text Processing|[Sort Command #1](https://www.hackerrank.com/challenges/text-processing-sort-1/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%231.sh)
+Text Processing|[Sort Command #2](https://www.hackerrank.com/challenges/text-processing-sort-2/problem)||[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%232.sh)
 Text Processing|[Cut #1](https://www.hackerrank.com/challenges/text-processing-cut-1/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%233.sh)
 Text Processing|[Cut #2](https://www.hackerrank.com/challenges/text-processing-cut-2/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%232.sh)
 Text Processiing|[Cut #3](https://www.hackerrank.com/challenges/text-processing-cut-3/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Cut%20%233.sh)
