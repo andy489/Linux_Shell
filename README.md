@@ -19,7 +19,6 @@ FMI>Text Processing|[03-b-7500](https://github.com/andy489/Linux_Shell/blob/mast
 FMI>Text Processing|[T_04](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/File%20Processing/Task%2004.md)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/File%20Processing/Task%2004.md)
 FMI>Text Processing|[T_05](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/File%20Processing/Task%2005.md)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/File%20Processing/Task%2005.md)
 FMI>Text Processing|[T_06](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/File%20Processing/Task%2006.md)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/File%20Processing/Task%2006.md)
-
 Text Processing|[Sort Command #1](https://www.hackerrank.com/challenges/text-processing-sort-1/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%231.sh)
 Text Processing|[Sort Command #2](https://www.hackerrank.com/challenges/text-processing-sort-2/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%232.sh)
 Text Processing|[Sort Command #3](https://www.hackerrank.com/challenges/text-processing-sort-3/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%233.sh)
