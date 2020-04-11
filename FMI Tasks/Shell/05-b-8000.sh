@@ -2,6 +2,13 @@
 # 05-b-8000
 # github.com/andy489
 
+: '
+This script calculates the proportion of
+Resident Set Size (memory allocated to a process in RAM)
+and Virtual Memory Size (memory that a process can access)
+for every specific user process
+'
+
 if [ $# -ne 1 ]; then
         echo "Invalid number of arguments"
         exit 1
