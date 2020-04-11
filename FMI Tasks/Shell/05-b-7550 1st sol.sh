@@ -10,7 +10,7 @@ It does not give the process a chance to cleanly:
 4) reset its terminal characteristics
 	and so on and so on.
 Generally, send 15, and wait a second or two, and if that does not work, send 2, 
-and if that does not work send 1. If that doesnt't REMOVE THE BINARY because
+and if that does not work send 1. If that does not REMOVE THE BINARY because
 the program is badly behaved!
 '
 if [ $# -ne 1 ]; then
