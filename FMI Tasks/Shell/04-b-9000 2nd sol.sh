@@ -1,5 +1,5 @@
 #!/bin/bash
-# 04-b-9000   second
+# 04-b-9000 2nd solution
 # github.com/andy489
 
 PROCESS_FILE="$(mktemp)"
