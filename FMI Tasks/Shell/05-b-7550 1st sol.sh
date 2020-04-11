@@ -2,15 +2,15 @@
 # 05-b-7550 1st solution
 # github.com/andy489
 : '
-Don't use kill -9
-It doesn't give the process a chance to cleanly:
+Do not use kill -9
+It does not give the process a chance to cleanly:
 1) shut down socket connections
 2) clean up temp files
 3) inform its children that it is going away
 4) reset its terminal characteristics
 	and so on and so on.
-Generally, send 15, and wait a second or two, and if that doesn't work, send 2, 
-and if that doesn't work send 1. If that doesnt't REMOVE THE BINARY because
+Generally, send 15, and wait a second or two, and if that does not work, send 2, 
+and if that does not work send 1. If that doesnt't REMOVE THE BINARY because
 the program is badly behaved!
 '
 if [ $# -ne 1 ]; then
