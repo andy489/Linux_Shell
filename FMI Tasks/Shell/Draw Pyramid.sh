@@ -1,8 +1,5 @@
-# github.com/andy489
-
-!#/bin/bash
-
 #!/bin/bash
+# github.com/andy489
 
 n=$1 
   
