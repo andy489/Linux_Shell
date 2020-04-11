@@ -16,5 +16,8 @@ if [ $(id -u "${USER}") -eq 1 ]; then
 fi       
 
 PS_CNT=$(ps -u "${USER}" | wc -l)
-killall -u "$USER"
+killall -15 -u "${USER}"
+killall -9 -u "${USER}"
 echo "Total: ${PS_CNT} killed processes"
+
+# run with sudo ./05-b-7550.sh user
