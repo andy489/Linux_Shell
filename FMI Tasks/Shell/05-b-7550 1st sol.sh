@@ -1,6 +1,7 @@
 #!/bin/bash
 # 05-b-7550 1st solution
 # github.com/andy489
+
 : '
 Do not use kill -9
 It does not give the process a chance to cleanly:
