@@ -2,7 +2,7 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
-FMI>Shell|[04-b-9000](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Processes/04.%20Processes.pdf)|-|[Solution 1.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/04-b-9000%201st%20sol.sh)<br>[Solution 2](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/04-b-9000%202nd%20sol.sh)
+FMI>Shell|[04-b-9000](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Processes/04.%20Processes.pdf)|-|[Solution 1.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/04-b-9000%201st%20sol.sh)<br>[Solution 2.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/04-b-9000%202nd%20sol.sh)
 FMI>Shell|[05-b-2000](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2000.sh)
 FMI>Shell|[05-b-2800](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2800.sh)
 FMI>Shell|[05-b-3100](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-3100.sh)
