@@ -1,7 +1,18 @@
 #!/bin/bash
 # 05-b-7550 1st solution
 # github.com/andy489
-
+: '
+Don't use kill -9
+It doesn't give the process a chance to cleanly:
+1) shut down socket connections
+2) clean up temp files
+3) inform its children that it is going away
+4) reset its terminal characteristics
+	and so on and so on.
+Generally, send 15, and wait a second or two, and if that doesn't work, send 2, 
+and if that doesn't work send 1. If that doesnt't REMOVE THE BINARY because
+the program is badly behaved!
+'
 if [ $# -ne 1 ]; then
 	echo "Invalid number of arguments!"
 	exit 1
@@ -18,6 +29,7 @@ PS_CNT=0
 
 while read -d $'\n' PID; do
 	kill -15 "${PID}"
+	sleep 1
 	kill -9 "${PID}"
 	CNT=(($CNT+1))
 done < <(ps -u "${USER}" -o pid=)
