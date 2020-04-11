@@ -32,7 +32,7 @@ while read -d $'\n' PID; do
 	kill -15 "${PID}"
 	sleep 1
 	kill -9 "${PID}"
-	CNT=(($CNT+1))
+	PS_CNT=(($PS_CNT+1))
 done < <(ps -u "${USER}" -o pid=)
 
 echo "Total: ${PS_CNT} killed processes"
