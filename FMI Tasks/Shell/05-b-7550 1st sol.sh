@@ -17,7 +17,8 @@ fi
 PS_CNT=0
 
 while read -d $'\n' PID; do
-	kill "${PID}"
+	kill -15 "${PID}"
+	kill -9 "${PID}"
 	CNT=(($CNT+1))
 done < <(ps -u "${USER}" -o pid=)
 
