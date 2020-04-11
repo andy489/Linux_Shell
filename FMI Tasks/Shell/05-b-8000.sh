@@ -22,7 +22,7 @@ if validate_user "${USER}"; then
                 if [ VSZ = 0 ]; then
                         PROPORTION="inf"
                 else
-                        PROPORTION=$(echo "$(bc <<< "scale=2; $RSS / $VSZ")")
+                        PROPORTION=$(echo "$(bc <<< "scale=4; $RSS / $VSZ")")
                 fi
                 ANSWER+="${VSZ} Process: ${COMM}, RSS/VSZ=${PROPORTION}\n"
         done < <(ps -u "${USER}" -o rss=,vsz=,comm=)
