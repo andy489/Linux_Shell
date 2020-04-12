@@ -1,5 +1,6 @@
 #!/bin/bash
 # 05-b-6800
+# github.com/andy489
 
 [ $# -eq 0 ] &&  exit 0
 
