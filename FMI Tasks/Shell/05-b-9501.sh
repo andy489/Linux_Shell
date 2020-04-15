@@ -57,3 +57,5 @@ while read LINE; do
 change_color ${COUNT} ${LINE}
 COUNT=$(( COUNT + 1 ))
 done
+
+# Usage: cat file.txt | ./05-b-9501 -r
