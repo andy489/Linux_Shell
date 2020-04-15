@@ -1,6 +1,6 @@
 #!/bin/bash
-# 05-b-7200
-# github.com/andy489
+# 05-b-7200 1st solution
+# github.com/andy489 
 
 for i; do
         if [ -f "${i}" ]; then
