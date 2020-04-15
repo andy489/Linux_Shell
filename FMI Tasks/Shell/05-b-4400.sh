@@ -45,4 +45,8 @@ find "${FIRST_DIR_PATH}" -type f -mmin -45 -exec cp {} "${SECOND_DIR_PATH}" \;
 #	cp "${FILE}" "${SECOND_DIR_PATH}"
 #done
 
-echo -e "\nSuccessfully copying files\n"
+echo -e "\n~Copying files was successfull\n"
+
+tar -zcvf "${SECOND_DIR_PATH}".tar.gz "${SECOND_DIR_PATH}"
+
+[ $? -eq 0 ] && echo -e "\n~Archivating was successful\n"
