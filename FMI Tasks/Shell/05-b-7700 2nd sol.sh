@@ -24,7 +24,7 @@ function validate_num {
 }
 
 if validate_num "${NUM}"; then
-	ALL_SIZES=$(find "${DIR_PATH}" -type f 2>/dev/null -size -"${NUM}"c -printf "%s\n")
+	ALL_SIZES=$(find "${DIR_PATH}" -maxdepth 1 -type f 2>/dev/null -size -"${NUM}"c -printf "%s\n")
 	# echo "${ALL_SIZES}"
 	TOTAL_SIZE=0
 	for i in ${ALL_SIZES}; do
