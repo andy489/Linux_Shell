@@ -23,8 +23,8 @@ function validate_num {
 }
 
 if validate_num "${NUM}"; then
-        find "${DIR_PATH}" -type f 2>/dev/null -printf "%s\n" \
-                | awk -v sz="${NUM}" '{if($1>sz) sum+=$1} END {print sum}'
+        find "${DIR_PATH}" -maxdepth 1 -type f 2>/dev/null -printf "%s\n" \
+                | awk -v sz="${NUM}" '$1 > sz {SUM+=$1} END {print SUM}'
 else
         echo "Second argument is an invalid integer number!"
         exit 4
