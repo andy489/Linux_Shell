@@ -28,7 +28,7 @@ fi
  
 PS_CNT=0
 
-while read -d $'\n' PID; do
+while read PID; do # read -d $'\n' PID
 	kill -15 "${PID}"
 	sleep 1
 	kill -9 "${PID}"
