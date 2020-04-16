@@ -1,5 +1,5 @@
 #!/bin/bash
-# 05-b-4300.sh
+# 05-b-4500.sh
 # github.com/andy489
 
 if [ $# -ne 1 ]; then
@@ -14,8 +14,8 @@ if ! cut -d ':' -f1 /etc/passwd | fgrep -q "^${USERNAME}$"; then
 	exit 2
 fi
 
-until who -u | awk '{print $1} | fgrep -q "^${USERNAME}$"; do
+until who -u | awk -F : '{print $1} | fgrep -q "^${USERNAME}$"; do
 	sleep 1
 done
 
-echo "User ${USERNAME} logged in"
+echo "User ${USERNAME} has just logged in"
