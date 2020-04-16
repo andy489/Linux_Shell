@@ -15,7 +15,7 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-[ $(id -u) -ne 0 ] && exit 2
+[ $(id -u) -eq 0 ] || exit 2
 
 N="${1}"
 
