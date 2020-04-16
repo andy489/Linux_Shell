@@ -15,8 +15,8 @@ fi
 MAX_CNT=0
 CUR_CNT=0
 
-DATA_FIRST_WAY=$(cat "$1" | grep -o "." | egrep "({|})" | tr "\n" " ")
-DATA_SECOND_WAY=$(cat "$1" | sed 's/[^{}]/\n/g' | sed '/^ *$/d')
+DATA_FIRST_WAY=$(cat "$1" | grep -o "." | egrep "({|})")
+DATA_SECOND_WAY=$(cat "$1" | sed 's/[^{}]//g' | gsed "s/./&\n/g" | sed '/^ *$/d')
 
 DATA=${DATA_SECOND_WAY}
 
