@@ -1,5 +1,5 @@
 #!/bin/bash
-# 05-b-4800.sh
+# 05-b-4800.sh 1st solution
 # github.com/andy489
 
 if [ $# -ne 2 ]; then
@@ -28,6 +28,7 @@ fi
 
 FILE_HASH="$(md5sum "${FILE_PATH}" | cut -d' ' -f1)"
 CNT=0
+
 while read -d $'\0' FILE; do
 	CUR_HASH="$(md5sum "${FILE}" | cut -d' ' -f1)"
 	if [ "${CUR_HASH}" = "${FILE_HASH}" ]; then
@@ -37,7 +38,7 @@ while read -d $'\0' FILE; do
 done < <(find "${DIR_PATH}" -type f 2>/dev/null -print0)
 
 if [ $CNT -eq 0 ]; then
-	echo "No copies found."
+	echo "~No copies found."
 else
 	echo "~Found total $CNT duplicates."
 fi
