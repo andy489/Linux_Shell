@@ -18,8 +18,8 @@ elif [ ! -r "${ADDRESS_BOOK}" ]; then
 	exit 3
 fi
 
-if ! fgrep -wq "${USERNAME}" "${ADDRESS_BOOK}"; then
-        echo "User ${USERNAME} is not in the address book!"
+if ! fgrep -wq "${NICKNAME}" "${ADDRESS_BOOK}"; then
+        echo "Nickname ${NICKNAME} is not in the address book!"
         exit 4
 fi
 
