@@ -3,7 +3,8 @@
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
 FMI>Shell|[05-b-2000](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2000.sh)
-FMI>Shell|[05-b-2800](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution 1 (bashism).sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2800%201st%20sol.sh)<br>[Solution 2.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2800%202nd%20sol.sh)
+FMI>Shell|[05-b-2800](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution 1 (bashism).sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2800%201st%20sol.sh)<br>[Solution 2 (pipe).sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2800%202nd%20sol.sh)
+[Solution 3 (process substitution).sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-2800%203rd%20sol.sh)
 FMI>Shell|[05-b-3100](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-3100.sh)
 FMI>Shell|[05-b-3200](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution 1.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-3200%201st%20sol.sh)<br>[Solution 2.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-3200%202nd%20sol.sh)
 FMI>Shell|[05-b-3300](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05.%20Shell%20Tasks.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Shell/05-b-3300.sh)
