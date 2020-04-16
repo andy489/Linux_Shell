@@ -15,11 +15,13 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
+[ $(id -u) -ne 0 ] && exit 2
+
 N="${1}"
 
 if ! grep -qE '^[-+]?[0-9]+$' <(echo "${N}"); then
 	echo "Invalid argument"
-	exit 2
+	exit 3
 fi
 
 USERS=$(ps -e -o user= | grep -v '^_' | sort | uniq)
@@ -33,7 +35,7 @@ for USER in ${USERS}; do
 		
 	echo "Total ${USER_TOTAL_RSS}" resident set size for user" ${USER}"
 	
-	if [ $(id -u) -ne 0 -a ${USER_TOTAL_RSS} -gt ${N} ]; then
+	if [ ${USER_TOTAL_RSS} -gt ${N} ]; then
 		kill -s TERM "${LAST_PID}"
 		sleep 2
 		kill -s KILL "${LAST_PID}"	
