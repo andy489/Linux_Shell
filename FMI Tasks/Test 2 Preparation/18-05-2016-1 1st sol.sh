@@ -1,5 +1,5 @@
 #!/bin/bash
-# 18-05-2016-1
+# 18-05-2016-1 1st solution
 # github.com/andy489
 
 : '
