@@ -32,6 +32,7 @@ for USER in ${USERS}; do
 	done < <(ps -u "${USER}" -o pid=,rss= | sort -n -k2)
 		
 	echo "Total ${USER_TOTAL_RSS}" resident set size for user" ${USER}"
+	
 	if [ $(id -u) -ne 0 -a ${USER_TOTAL_RSS} -gt ${N} ]; then
 		kill -s TERM "${LAST_PID}"
 		sleep 2
