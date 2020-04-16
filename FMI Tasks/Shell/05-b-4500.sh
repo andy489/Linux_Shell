@@ -9,12 +9,12 @@ fi
 
 USERNAME="${1}"
 
-if ! cut -d ':' -f1 /etc/passwd | fgrep -q "^${USERNAME}$"; then
+if ! cut -d ':' -f1 /etc/passwd | fgrep -qE "^${USERNAME}$"; then
 	echo "Invalid username!"
 	exit 2
 fi
 
-until who -u | awk -F : '{print $1} | fgrep -q "^${USERNAME}$"; do
+until who -u | awk -F : '{print $1} | fgrep -qE "^${USERNAME}$"; do
 	sleep 1
 done
 
