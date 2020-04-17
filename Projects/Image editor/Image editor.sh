@@ -1,5 +1,5 @@
 #!/bin/bash
-# Image editor
+# Image editor: crop [ipoint faces]
 # github.com/andy489
 
 function msg {
@@ -65,18 +65,51 @@ function ipoint {
 	offset_x=$( left_1d "${new_x}" "${size_x}" "${x}" )
 	offset_y=$( left_1d "${new_y}" "${size_y}" "${y}" )
 
-	#echo "size_x: ${size_x}, size_y: ${size_y}, a: ${a}, b: ${b}"
-	#echo "new_x: ${new_x}, new_y: ${new_y}"
-	#echo "offset_x: ${offset_x}, offset_y: ${offset_y}"
+	# echo "size_x: ${size_x}, size_y: ${size_y}, a: ${a}, b: ${b}"
+	# echo "new_x: ${new_x}, new_y: ${new_y}"
+	# echo "offset_x: ${offset_x}, offset_y: ${offset_y}"
 
 	convert "${input_image}" \
 		-crop "${new_x}x${new_y}+${offset_x}+${offset_y}" \
 		+repage "${output_image}"
 }
+
+function faces {
+	a="${1}"; b="${2}" 
+	input_image="${3}"; output_image="${4}"
+	
+	# obtaing image size
+	read size_x size_y < <(identify "${input_image}" \
+		| cut -d' ' -f3 | tr x ' ')
+
+	median_x=$(( size_x / 2 ))
+	median_y=$(( size_y / 2 ))
+
+	# echo "median_x: ${median_x}, median_y: ${median_y}"
+	
+	faces_cnt=$(facedetect -c "${input_image}" | wc -l)
+	
+	if [ "${faces_cnt}" -ne 0 ]; then
+	
+		# calculating median of all faces and format it to integer coordinates
+		read median_x median_y < <(facedetect -c "${input_image}" \
+			| awk '{coord_x+=$1; coord_y+=$2} END{printf "%.0f %d\n",coord_x/NR, coord_y/NR }')
+	fi
+
+	# echo "updated median_x: ${median_x}, updated median_y: ${median_y}"
+
+	ipoint "${a}" "${b}" "${median_x}" "${median_y}" "${input_image}" "${output_image}"
+}
+
 case "${1}" in
 	ipoint)
 		shift
 		ipoint "${@}"
+		exit $?
+		;;
+	faces)
+		shift
+		faces "${@}"
 		exit $?
 		;;
 	*)
