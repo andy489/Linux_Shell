@@ -65,9 +65,9 @@ function ipoint {
 	offset_x=$( left_1d "${new_x}" "${size_x}" "${x}" )
 	offset_y=$( left_1d "${new_y}" "${size_y}" "${y}" )
 
-	echo "size_x: ${size_x}, size_y: ${size_y}, a: ${a}, b: ${b}"
-	echo "new_x: ${new_x}, new_y: ${new_y}"
-	echo "offset_x: ${offset_x}, offset_y: ${offset_y}"
+	#echo "size_x: ${size_x}, size_y: ${size_y}, a: ${a}, b: ${b}"
+	#echo "new_x: ${new_x}, new_y: ${new_y}"
+	#echo "offset_x: ${offset_x}, offset_y: ${offset_y}"
 
 	convert "${input_image}" \
 		-crop "${new_x}x${new_y}+${offset_x}+${offset_y}" \
