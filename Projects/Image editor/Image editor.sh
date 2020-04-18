@@ -1,5 +1,5 @@
 #!/bin/bash
-# Image editor: crop [ipoint faces]
+# Image editor: crop [ipoint faces faces_s]
 # github.com/andy489
 
 function msg {
@@ -101,6 +101,47 @@ function faces {
 	ipoint "${a}" "${b}" "${median_x}" "${median_y}" "${input_image}" "${output_image}"
 }
 
+function faces_s {
+	# here instead of the median, we take the coordinates of the center
+	# of the smallest square that covers the set of ALL faces in a pic
+
+	a="${1}"; b="${2}"
+	input_image="${3}"; output_image="${4}"
+
+	# obtain image size
+	read size_x size_y < <(identify "${input_image}" \
+		| cut -d' ' -f3 | tr x ' ')
+
+	sq_x=$(( size_x / 2 ))
+	sq_y=$(( size_y / 2 ))
+	
+	# obtain the list of all faces in order to call the heavy "facedetect" function only once
+	faces=$(facedetect -c "${input_image}")
+
+	if [ $(echo "${faces}" | wc -l) -ne 0 ]; then
+
+		# calculating center of wanted square
+		read smallest_x latgest_x smallest_y largest_y \
+		< <(echo "${faces}" \
+		| awk 'BEGIN{s_x=2^15; l_x=-1; s_y=2^15; l_y=-1}
+		  {if ( s_x > $1 ) { s_x = $1 }
+	       	   if ( l_x < $1 ) { l_x = $1 }
+		   if ( s_y > $2 ) { s_y = $2 }
+		   if ( l_y < $2 ) { l_y = $2 }}
+	       	      END{print s_x, l_x, s_y, l_y}')
+
+		# echo -n "s_x: ${smallest_x}, l_x: ${largest_x}, "
+		# echo	  "s_y: ${smallest_y}, l_y: ${largest_y}"
+
+		sq_x=$(( smallest_x + (largest_x - smallest_x) / 2 ))
+		sq_y=$(( smallest_y + (largest_y - smallest_y) / 2 ))
+	fi
+	
+	# echo "updated center_sq_x: ${sq_x}, updated center_sq_y: ${sq_y}"
+	
+	ipoint "${a}" "${b}" "${sq_x}" "${sq_y}" "${input_image}" "${output_image}"
+}
+
 case "${1}" in
 	ipoint)
 		shift
@@ -111,6 +152,11 @@ case "${1}" in
 		shift
 		faces "${@}"
 		exit $?
+		;;
+	faces_s)
+		shift 
+		faces_s "${@}"
+		exit #?
 		;;
 	*)
 		die "unknown subcommand: ${1}"
