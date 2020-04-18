@@ -2,7 +2,7 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
-FMI>Projects|[Image editor](https://github.com/andy489/Linux_Shell/blob/master/Projects/Image%20editor/Image%20editor.pdf)|-|[crop [ipoint faces].sh](https://github.com/andy489/Linux_Shell/blob/master/Projects/Image%20editor/Image%20editor.sh)
+FMI>Projects|[Image editor](https://github.com/andy489/Linux_Shell/blob/master/Projects/Image%20editor/Image%20editor.pdf)|-|[crop [ipoint faces faces_s].sh](https://github.com/andy489/Linux_Shell/blob/master/Projects/Image%20editor/Image%20editor.sh)
 FMI>Test 2 Preparation|[18-05-2016-1](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/K2_2016_SI.pdf)|-|[Solution 1 (dinf -L).sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/18-05-2016-1%201st%20sol.sh)<br>[Solution 2 (stat -c %N).sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/18-05-2016-1%202nd%20sol.sh)<br>[Solution 3 (ls -l).sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/18-05-2016-1%203rd%20sol.sh)
 FMI>Test 2 Preparation|[18-05-2016-2](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/K2_2016_SI.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/18-05-2016-2.sh)
 FMI>Test 2 Preparation|[18-05-2016-3](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/K2_2016_SI.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/18-05-2016-3.sh)
