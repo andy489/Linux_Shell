@@ -1,5 +1,5 @@
 #!/bin/bash
-# Image editor: crop [ipoint faces faces_s]
+# Image editor: crop [ipoint faces faces_r]
 # github.com/andy489
 
 function msg {
@@ -101,9 +101,9 @@ function faces {
 	ipoint "${a}" "${b}" "${median_x}" "${median_y}" "${input_image}" "${output_image}"
 }
 
-function faces_s {
+function faces_r {
 	# here instead of the median, we take the coordinates of the center
-	# of the smallest square that covers the set of ALL faces in a pic
+	# of the smallest rectangle that covers the set of ALL faces in a pic
 
 	a="${1}"; b="${2}"
 	input_image="${3}"; output_image="${4}"
@@ -112,8 +112,8 @@ function faces_s {
 	read size_x size_y < <(identify "${input_image}" \
 		| cut -d' ' -f3 | tr x ' ')
 
-	sq_x=$(( size_x / 2 ))
-	sq_y=$(( size_y / 2 ))
+	rec_x=$(( size_x / 2 ))
+	rec_y=$(( size_y / 2 ))
 	
 	# obtain the list of all faces in order to call the heavy "facedetect" function only once
 	faces=$(facedetect -c "${input_image}")
@@ -133,13 +133,13 @@ function faces_s {
 		# echo -n "s_x: ${smallest_x}, l_x: ${largest_x}, "
 		# echo	  "s_y: ${smallest_y}, l_y: ${largest_y}"
 
-		sq_x=$(( smallest_x + (largest_x - smallest_x) / 2 ))
-		sq_y=$(( smallest_y + (largest_y - smallest_y) / 2 ))
+		rec_x=$(( smallest_x + (largest_x - smallest_x) / 2 ))
+		rec_y=$(( smallest_y + (largest_y - smallest_y) / 2 ))
 	fi
 	
 	# echo "updated center_sq_x: ${sq_x}, updated center_sq_y: ${sq_y}"
 	
-	ipoint "${a}" "${b}" "${sq_x}" "${sq_y}" "${input_image}" "${output_image}"
+	ipoint "${a}" "${b}" "${rec_x}" "${rec_y}" "${input_image}" "${output_image}"
 }
 
 case "${1}" in
@@ -153,9 +153,9 @@ case "${1}" in
 		faces "${@}"
 		exit $?
 		;;
-	faces_s)
+	faces_r)
 		shift 
-		faces_s "${@}"
+		faces_r "${@}"
 		exit #?
 		;;
 	*)
