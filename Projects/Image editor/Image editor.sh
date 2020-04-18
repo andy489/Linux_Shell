@@ -120,7 +120,7 @@ function faces_r {
 
 	if [ $(echo "${faces}" | wc -l) -ne 0 ]; then
 
-		# calculating center of wanted square
+		# calculating center of wanted rectangle
 		read smallest_x latgest_x smallest_y largest_y \
 		< <(echo "${faces}" \
 		| awk 'BEGIN{s_x=2^15; l_x=-1; s_y=2^15; l_y=-1}
