@@ -7,7 +7,7 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-[ $(id -u) -eq 0 ] || exit 2
+[ $(id -u) -eq 0 ] || exit 0
 
 N="${1}"
 
