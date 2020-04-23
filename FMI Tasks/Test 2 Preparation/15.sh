@@ -2,7 +2,7 @@
 # 15
 # github.com/andy489
 
-[ $(id -u) -eq 0 ] || exit 1
+[ $(id -u) -eq 0 ] || exit 0
 
 while read USER HOME; do
         if [ ! -d "${HOME}" ] || sudo -u "${USER}" [ ! -w "${HOME}" ]; then
