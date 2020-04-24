@@ -97,7 +97,8 @@ function faces {
 	# obtaing image size
         read size_x size_y < <(identify "${input_image}" \
                 | cut -d' ' -f3 | tr x ' ')
-
+	
+	# default
         center_x=$(( size_x / 2 ))
         center_y=$(( size_y / 2 ))
 
