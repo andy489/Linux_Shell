@@ -47,5 +47,5 @@ while read PID ETIMES; do
     fi
 done < <( cat "${PS}" | fgrep "^${FOO}")
 
-rm "${PS}"
-rm "${UNIQUE_USERS}"
+rm -- "${PS}"
+rm -- "${UNIQUE_USERS}"
