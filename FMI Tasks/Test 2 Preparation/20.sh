@@ -2,7 +2,7 @@
 # 20.sh
 # github.com/andy489
   
-[ $# -eq 3 ] || { echo "Invalid number of arguments!"; exit 1; }
+[ $# -eq 3 ] || { echo "Usage: $0 <dirname> <dirname> <string>"; exit 1; }
 
 src="${1}"
 dst="${2}"
@@ -13,9 +13,12 @@ str="${3}"
 [ -r "${src}" ] || { echo "Source is not readable!"; exit 4; }
 [ -w "${dst}" ] || { echo "Destination is not writable!"; exit 5; }
 
-#[ $(id -u) -eq 0 ] || exit 0
+#[ $(id -u) -eq 0 ] || { echo "Script not run as root (do nothing)!"; exit 0; }
 
 dir_name=$( dirname "${0}" )
+
+dst_content=$( find "${dst}" -type f ! -name ".*" 2>/dev/null | wc -l)
+#[ "${dst_content}" -eq 0 ] || { echo "Destinarion dir must not have other files!"; exit 6; }
 
 while read f; do
         base_name=$( basename "${f}" )
