@@ -1,4 +1,6 @@
 #!/bin/bash
+# 21.sh
+# github.com/andy489
   
 [ $(id -u) -eq 0 ] || { echo "Script $0 not executed as root, nothing done!"; exit 1; }
 
