@@ -37,9 +37,13 @@ while read symlink; do
 		cnt=$(expr $cnt '+' 1)
 	else
 		if [ -n "${file}" ]; then
-			stat -f "%N%SY" "$(echo "${symlink}" | cut -d':' -f1)" >> "${file}"
+			# macOS
+			# stat -f "%N%SY" "$(echo "${symlink}" | cut -d':' -f1)" >> "${file}"
+			stat -c "%N" "$(echo "${symlink}" | cut -d':' -f1)" | tr -d "\'" >> "${file}"
 		else
-			stat -f "%N%SY" "$(echo "${symlink}" | cut -d':' -f1)"			
+			# macOS
+			# stat -f "%N%SY" "$(echo "${symlink}" | cut -d':' -f1)"
+			stat -c "%N" "$(echo "${symlink}" | cut -d':' -f1)" | tr -d "\'"
 		fi
 	fi
 done < <(find "${dir}" -type l 2>/dev/null -exec file {} \;)
