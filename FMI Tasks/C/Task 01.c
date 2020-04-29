@@ -9,7 +9,6 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv){
-
         if(argc < 3 ){
             write(2, "Invalid number of arguments!\n", 29);
             exit(-1);
