@@ -1,4 +1,5 @@
-//github.com/andy489
+// Implement a head function withoud options
+// github.com/andy489
 
 #include <fcntl.h>
 #include <stdlib.h>
