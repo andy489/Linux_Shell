@@ -1,4 +1,6 @@
 // Append the content file1.txt to the content of file2.txt
+// Task 01.c
+// github.com/andy489
 
 #include <sys/types.h>
 #include <sys/stat.h>
