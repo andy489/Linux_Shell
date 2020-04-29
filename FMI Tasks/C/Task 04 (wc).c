@@ -13,7 +13,7 @@ int main (int argc, char* argv[]){
 	char c;
 	
 	if (argc != 2) {
-		fprintf(stderr, "err\n");
+		fprintf(stderr, "Invalid number of arguments\n");
 		exit(1);
 	}
 
