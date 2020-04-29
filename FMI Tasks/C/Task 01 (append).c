@@ -21,7 +21,7 @@ int main(int argc, char** argv){
             exit(-1);
         }
 
-        if((fd2 = open(argv[2], O_CREAT | O_WRONLY | O_APPEND)) == -1 ){
+        if((fd2 = open(argv[2], O_CREAT | O_WRONLY | O_APPEND, S_IRWXU)) == -1 ){
             write(2, "File failed to open in write mode\n", 34);
             exit(-1);
         }
