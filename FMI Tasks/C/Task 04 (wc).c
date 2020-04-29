@@ -29,7 +29,7 @@ int main (int argc, char* argv[]){
 			inWord = 0;
 		}
 
-		if (c!=' ' && c!='\n' && c!='\t' && c!='\n') {
+		if (c!=' ' && c!='\n' && c!='\t' && c!='\0') {
 			if(!inWord){
 				++words;
 				inWord = 1;
