@@ -16,7 +16,7 @@ int main(int argc, char* argv[]){
 	}
 
 	if ((fd1 = open(argv[1], O_RDONLY)) == -1) {
-		err(1, "File failed to open in read mode");
+		err(1, "file %s failed to open in read mode", argv[1]);
 	}
 
 	while (read(fd1, &c, 1)) {
