@@ -4,6 +4,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <err.h>
 
 int main(int argc, char* argv[]){
 	int fd1;
@@ -11,13 +12,11 @@ int main(int argc, char* argv[]){
 	char c;
 
 	if (argc != 2) {
-		write(2, "err\n", 4);
-		exit(-1);
+		errx(1, "Invalid number of arguments");
 	}
 
 	if ((fd1 = open(argv[1], O_RDONLY)) == -1) {
-		write(2, "File failed to open in read mode\n", 33);
-		exit(-1);
+		err(1, "File failed to open in read mode");
 	}
 
 	while (read(fd1, &c, 1)) {
