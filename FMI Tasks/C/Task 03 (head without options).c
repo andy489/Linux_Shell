@@ -20,15 +20,9 @@ int main(int argc, char* argv[]){
 	}
 
 	while (read(fd1, &c, 1)) {
-		if (c == '\n') {
-			i=i+1;
-		}
-
+		if (c == '\n') ++i;
 		write(1, &c, 1);
-
-		if (i == 10) {
-			break;
-		}
+		if (i == 10) break;
 	}
 
 	close(fd1);
