@@ -7,8 +7,8 @@
 #include <err.h>
 
 int main(int argc, char* argv[]){
-	int fd1;
-	int i = 0;
+	int fd1,
+	    i = 0;
 	char c;
 
 	if (argc != 2) {
