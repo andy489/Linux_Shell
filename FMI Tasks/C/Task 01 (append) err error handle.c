@@ -10,7 +10,7 @@
 
 int main(int argc, char** argv){
         if(argc < 3 ){
-                err(1, "Invalid number of arguments");
+                errx(1, "Invalid number of arguments");
         }
 
         int fd1, fd2;
