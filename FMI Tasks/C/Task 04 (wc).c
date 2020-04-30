@@ -4,22 +4,21 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <err.h>
 
 int main (int argc, char* argv[]){
 	int fd1,
-		lines = 0, 
-		words = 0, 
-		chars = 0;
+	    lines = 0, 
+            words = 0, 
+	    chars = 0;
 	char c;
 	
 	if (argc != 2) {
-		fprintf(stderr, "Invalid number of arguments\n");
-		exit(1);
+		errx(1, "Invalid number of arguments");
 	}
 
 	if ( (fd1 = open(argv[1], O_RDONLY)) == -1 ) {
-		fprintf(stderr, "Operation open failed\n");
-		exit(1);
+		err(2, "Operation open failed");
 	}
 
 	int inWord = 0;
