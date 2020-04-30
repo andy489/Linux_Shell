@@ -5,15 +5,15 @@
 
 #include <fcntl.h>
 #include <stdio.h>
+#include <err.h>
 
 int main(int argc, char *argv[]){
-    if(argc != 3) {
-        fputs("Wrong number of arguments\n", stderr);
-        return 1;
-    }
-    if(renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_EXCHANGE)) {
-        perror("renameat2");
-        return 1;
-    }
-    return 0;
+	if(argc != 3) {
+		errx(1,"Wrong number of arguments");
+	}
+	int ex;
+	if((ex = renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_EXCHANGE)) == -1) {
+		err(2,"Fail");
+	}
+	return 0;
 }
