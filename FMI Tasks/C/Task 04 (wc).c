@@ -18,7 +18,7 @@ int main (int argc, char* argv[]){
 	}
 
 	if ( (fd1 = open(argv[1], O_RDONLY)) == -1 ) {
-		err(2, "Operation open failed");
+		err(2, "error opening file %s", argv[1]);
 	}
 
 	int inWord = 0;
