@@ -9,6 +9,7 @@ FMI>C|03. head without options|-|[Solution.c](https://github.com/andy489/Linux_S
 FMI>C|04. wc|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2004%20(wc).c)
 FMI>C|05. sort binary file|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2004%20(wc).c)
 FMI>C|06. cp with 2 args|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2006%20(cp%20with%202%20args).c)
+FMI>C|07. cat with multiple args|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2007%20(cat%20with%20multiple%20args).c)
 FMI>Scripts|[Task 13](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/05.%20Shell%20Exam%20problems.pdf)|-|[Solution 1.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/13%20(solution%201).sh)<br>[Solution 2.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/13%20(solution%202).sh)
 FMI>Scripts|[Task 14](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/05.%20Shell%20Exam%20problems.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/14.sh)
 FMI>Scripts|[Task 15](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/05.%20Shell%20Exam%20problems.pdf)|-|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/15.sh)
