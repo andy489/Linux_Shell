@@ -10,7 +10,7 @@ FILE="${1}"; KEY_1="${2}"; KEY_2="${3}"
 
 [ -n "${KEY_1}" -a -n "${KEY_2}" ] || { echo "There is a key with length 0"; exit 3; }
 
-VALUE_1=$( grep "${KEY_1}" f | cut -d'=' -f2 | awk '{$1=$1}1' | tr ' ' '\n' | sort | uniq)
+VALUE_1=$( grep "${KEY_1}" "${FILE}" | cut -d'=' -f2 | awk '{$1=$1}1' | tr ' ' '\n' | sort | uniq)
 
 VALUE_2=$( grep -vxF -f <(echo "${VALUE_1}") <(grep "${KEY_2}" "${FILE}" \
 	| cut -d'=' -f2 | awk '{$1=$1}1' | tr ' ' '\n' | sort | uniq) )
