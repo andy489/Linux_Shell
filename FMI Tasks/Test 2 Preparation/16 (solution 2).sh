@@ -12,7 +12,7 @@ FILE="${1}"; KEY_1="${2}"; KEY_2="${3}"
 VAL_1="$(cat "${FILE}" | fgrep "${KEY_1}=" | awk -F'=' '{print $2}')"
 VAL_2="$(cat "${FILE}" | fgrep "${KEY_2}=" | awk -F'=' '{print $2}')"
 
-[ -n "${VAL_2}" ] && exit 0
+[ -n "${VAL_2}" ] || exit 0
 
 NEW_VAL=""
 for WORD in ${VAL_2}; do
@@ -20,6 +20,8 @@ for WORD in ${VAL_2}; do
 		NEW_VAL+="${WORD} "
 	fi
 done
+
+NEW_VAL="$(echo "${NEW_VAL%?}" )"
 
 sed -i -E "s/${KEY_2}=${VAL_2}/${KEY_2}=${NEW_VAL}/" "${FILE}"
 
