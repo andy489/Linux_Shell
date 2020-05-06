@@ -76,7 +76,7 @@ int main(int argc, char** argv){
 	int j;
 	if(strcmp(arg,"--print") == 0){
 		for(j=0;j<i;++j){
-			printf("%d\n",nums[j]);
+			printf("%x\n",nums[j]);
 		}
 	}
 	else{
@@ -90,9 +90,9 @@ int main(int argc, char** argv){
 			}
 		}
 		if(strcmp(arg,"--min")==0){
-			printf("%d\n", min);
+			printf("%x\n", min);
 		}
-		else printf("%d\n", max);
+		else printf("%x\n", max);
 	}	
 
 	close(fd);
