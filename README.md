@@ -7,7 +7,7 @@ FMI>C|01. append|-|[Solution 1 (err error handle).c](https://github.com/andy489/
 FMI>C|02. swap files|-|[Solution 1 (read and write).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2002%20(swap%202%20files%20-%20read%20%26%20write).c)<br>[Solution 2 (renameat2).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2002%20(swap%202%20files%20-%20renameat2).c)
 FMI>C|03. head without options|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2003%20(head%20without%20options).c)
 FMI>C|04. wc|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2004%20(wc).c)
-FMI>C|05. sort binary file|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2004%20(wc).c)
+FMI>C|05. sort binary file|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2005%20(qsort).c)
 FMI>C|06. cp with 2 args|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2006%20(cp%20with%202%20args).c)
 FMI>C|07. cat with multiple args|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2007%20(cat%20with%20multiple%20args).c)
 FMI>Scripts|[Task 13](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/05.%20Shell%20Exam%20problems.pdf)|-|[Solution 1.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/13%20(solution%201).sh)<br>[Solution 2.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Test%202%20Preparation/13%20(solution%202).sh)
