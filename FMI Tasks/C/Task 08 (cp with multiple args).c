@@ -24,7 +24,7 @@ int main(int argc, char** argv){
 	}
 	
 	int wr = access(dirpath, W_OK);
-	if(wr != 0){
+	if(wr == -1){
 		err(3,"dir %s - not writable", dirpath);
 	}	
 	
