@@ -10,7 +10,7 @@ FMI>C|04. wc|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/F
 FMI>C|05. sort binary file|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2005%20(qsort).c)
 FMI>C|06. cp with 2 args|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2006%20(cp%20with%202%20args).c)
 FMI>C|07. cat with multiple args|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2007%20(cat%20with%20multiple%20args).c)
-FMI>C|08. cp with multiple args|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2008%20(cp%20with%20multiple%20args).c)
+FMI>C|08. cp with multiple args|-|[Solution 1.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2008%201st%20sol%20(cp%20with%20multiple%20args).c)<br>[Solution 2.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2008%202nd%20sol%20(cp%20with%20multiple%20args).c)
 FMI>C|09. [passwd with '?' separator](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2009.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2009%20(passwd%20with%20'%3F'%20separator).c)
 FMI>C|10. [[--print --min --max] binfile](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2010.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2010%20(--print%20--min%20--max%20binfile).c)
 FMI>C|36. [cat with args](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/06.%20C%20problems.pdf)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2036.c)
