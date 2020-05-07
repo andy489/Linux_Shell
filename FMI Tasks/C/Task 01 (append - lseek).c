@@ -20,7 +20,7 @@ int main(int argc, char** argv){
 		err(2,"error while opening %s", f1);
 	}
 
-	if((fd2 = open(f2, O_WRONLY)) == -1){
+	if((fd2 = open(f2, O_WRONLY | O_EXCL)) == -1){
 		int _errno=errno;
 		close(fd1);
 		errno=_errno;
