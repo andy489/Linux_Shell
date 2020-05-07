@@ -5,26 +5,34 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <err.h>
+#include <errno.h>
 
 int main(int argc, char* argv[]){
-	int fd1,
-	    i = 0;
+	int fd, lines = 0;
 	char c;
 
 	if (argc != 2) {
 		errx(1, "Invalid number of arguments");
 	}
 
-	if ((fd1 = open(argv[1], O_RDONLY)) == -1) {
-		err(1, "file %s failed to open in read mode", argv[1]);
-	}
+	const char *file = argv[1];
 
-	while (read(fd1, &c, 1)) {
-		if (c == '\n') ++i;
+	if ((fd = open(file, O_RDONLY)) == -1) {
+		err(2, "failed to open %s", file);
+	}
+	
+	int rd;
+	while ((rd = read(fd, &c, 1)) > 0) {
+		if(rd == -1){
+			int _errno=errno;
+			close(fd);
+			errno=_errno;
+			err(3, "failed to read %s", file);
+		}
+		if (c == '\n') ++lines;
 		write(1, &c, 1);
-		if (i == 10) break;
+		if (lines == 10) break;
 	}
-
-	close(fd1);
+	close(fd);
 	exit(0);
 }
