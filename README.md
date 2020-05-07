@@ -3,7 +3,7 @@
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
 FMI>C|memory management|-|[struct padding.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2000%20(struct%20padding).c)
-FMI>C|01. append|-|[Solution 1 (err error handle).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append)%20err%20error%20handle.c)<br>[Solution 2 (write error handle).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append)%20write%20error%20handle.c)
+FMI>C|01. append|-|[Solution 1 (err error handle).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append)%20err%20error%20handle.c)<br>[Solution 2 (write error handle).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append)%20write%20error%20handle.c)<br>[Solution 3 (lseek).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append%20-%20lseek).c)
 FMI>C|02. swap files|-|[Solution 1 (read and write).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2002%20(swap%202%20files%20-%20read%20%26%20write).c)<br>[Solution 2 (renameat2).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2002%20(swap%202%20files%20-%20renameat2).c)
 FMI>C|03. head without options|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2003%20(head%20without%20options).c)
 FMI>C|04. wc|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2004%20(wc).c)
