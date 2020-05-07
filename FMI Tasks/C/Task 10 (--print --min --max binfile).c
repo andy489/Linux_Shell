@@ -50,7 +50,7 @@ int main(int argc, char** argv){
 	}
 
 	uint16_t buf;
-	int read_sz;
+	ssize_t read_sz;
 	int i=0;
 
 	int fd = open(binfile, O_RDONLY);
@@ -62,7 +62,7 @@ int main(int argc, char** argv){
 	}
 	
 	while((read_sz=read(fd, &buf, sizeof(uint16_t))) > 0){
-		if(read_sz!=sizeof(uint16_t)){
+		if(read_sz!=sizeof(uint16_t) || read_sz == -1){
 			int _errno=errno;
 			free(nums);
 			close(fd);
