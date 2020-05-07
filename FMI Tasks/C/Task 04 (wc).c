@@ -5,24 +5,30 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <err.h>
+#include <errno.h>
 
 int main (int argc, char* argv[]){
-	int fd1,
-	    lines = 0, 
-            words = 0, 
-	    chars = 0;
+	int fd, lines = 0, words = 0, chars = 0;
 	char c;
 	
 	if (argc != 2) {
 		errx(1, "Invalid number of arguments");
 	}
 
-	if ( (fd1 = open(argv[1], O_RDONLY)) == -1 ) {
-		err(2, "error opening file %s", argv[1]);
+	const char * file = argv[1];
+
+	if ( (fd = open(file, O_RDONLY)) == -1 ) {
+		err(2, "error opening file %s", file);
 	}
 
-	int inWord = 0;
-	while ( read(fd1, &c, 1) > 0 ) {
+	int inWord = 0, rd;
+	while ((rd=read(fd, &c, 1)) > 0 ) {
+		if(rd==-1){
+			int _errno=errno;
+			close(fd);
+			errno=_errno;
+			err(3,"error while reading %s", file);
+		}
 		if (c=='\n') {
 			++lines;
 			inWord = 0;
@@ -35,11 +41,10 @@ int main (int argc, char* argv[]){
 			}
 		} 
 		else inWord = 0;
-	
 		++chars;
 	}
 
-	printf("File %s has:\n%d number of lines.\n%d number of words.\n%d number of chars.\n", argv[1], lines, words, chars);
-	close(fd1);
+	printf("File %s has:\n%d lines\n%d words\n%d chars\n", file, lines, words, chars);
+	close(fd);
 	exit(0);
 }
