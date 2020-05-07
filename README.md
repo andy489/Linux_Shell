@@ -2,6 +2,7 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
+FMI>C|Makefile|-|[Makefile](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Makefile)
 FMI>C|memory management|-|[struct padding.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2000%20(struct%20padding).c)
 FMI>C|01. append|-|[Solution 1 (O_APPEND).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append%20-%20O_APPEND).c)<br>[Solution 2 (lseek).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append%20-%20lseek).c)
 FMI>C|02. swap files|-|[Solution 1 (read and write).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2002%20(swap%202%20files%20-%20read%20%26%20write).c)<br>[Solution 2 (renameat2).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2002%20(swap%202%20files%20-%20renameat2).c)
