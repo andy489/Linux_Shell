@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <err.h>
+#include <errno.h>
 
 int main(int argc, char** argv){
         if(argc < 3 ){
@@ -18,9 +19,12 @@ int main(int argc, char** argv){
 
         if((fd1 = open(argv[1], O_RDONLY)) == -1){
         	err(2, "File failed to open in read mode");
-		}
+	}
 
         if((fd2 = open(argv[2], O_CREAT | O_WRONLY | O_APPEND, S_IRWXU)) == -1 ){
+		int _errno=errno;
+		close(fd1);
+		errno=_errno;
                 err(3, "File failed to open in write mode");
         }
 
