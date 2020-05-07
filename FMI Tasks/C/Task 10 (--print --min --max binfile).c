@@ -65,6 +65,7 @@ int main(int argc, char** argv){
 		if(read_sz!=sizeof(uint16_t)){
 			int _errno=errno;
 			free(nums);
+			close(fd);
 			errno=_errno;
 			err(7,"error while reading %s", binfile);
 		}
@@ -92,6 +93,7 @@ int main(int argc, char** argv){
 		}
 		else printf("%x\n", max);
 	}	
+	close(fd);
 	free(nums);
 	exit(0);
 }
