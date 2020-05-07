@@ -39,7 +39,7 @@ int main(int argc, char** argv){
 		exit(4);
 	}
 
-	if(access(binfile, O_RDONLY) == -1){
+	if(access(binfile, R_OK) == -1){
 		err(5,"error while opening %s", binfile);
 	}
 
