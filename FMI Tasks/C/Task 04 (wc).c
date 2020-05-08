@@ -8,8 +8,6 @@
 #include <errno.h>
 
 int main (int argc, char* argv[]){
-	int fd, lines = 0, words = 0, chars = 0;
-	char c;
 	
 	if (argc != 2) {
 		errx(1, "Invalid number of arguments");
@@ -17,31 +15,38 @@ int main (int argc, char* argv[]){
 
 	const char * file = argv[1];
 
+	int fd;
 	if ( (fd = open(file, O_RDONLY)) == -1 ) {
 		err(2, "error opening file %s", file);
 	}
 
-	int inWord = 0, rd;
-	while (rd=read(fd, &c, 1)) {
-		if(rd==-1 || rd!=1){
-			int _errno=errno;
-			close(fd);
-			errno=_errno;
-			err(3,"error while reading %s", file);
-		}
-		if (c=='\n') {
-			++lines;
-			inWord = 0;
-		}
-
-		if (c!=' ' && c!='\n' && c!='\t' && c!='\0') {
-			if(!inWord){
-				++words;
-				inWord = 1;
+	int lines = 0, words = 0, chars = 0;
+	char c[2<<10];
+	
+	int inWord = 0, rd = -1;
+	
+	while((rd = read(fd, &c, sizeof(c))) > 0) {
+		for(int i=0; i<rd; ++i){
+			if (c[i]=='\n') {
+				++lines;
+				inWord = 0;
 			}
-		} 
-		else inWord = 0;
-		++chars;
+
+			if (c[i]!=' ' && c[i]!='\n' && c[i]!='\t' && c[i]!='\0') {
+				if(!inWord){
+					++words;
+					inWord = 1;
+				}
+			} 
+			else inWord = 0;
+			++chars;
+		}
+	}
+	if(rd == -1){
+		int _errno=errno;
+		close(fd);
+		errno=_errno;
+		err(3,"error while reading %s", file);
 	}
 
 	printf("File %s has:\n%d lines\n%d words\n%d chars\n", file, lines, words, chars);
