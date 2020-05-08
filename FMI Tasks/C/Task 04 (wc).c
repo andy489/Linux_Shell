@@ -22,8 +22,8 @@ int main (int argc, char* argv[]){
 	}
 
 	int inWord = 0, rd;
-	while ((rd=read(fd, &c, 1)) > 0 ) {
-		if(rd==-1){
+	while (rd=read(fd, &c, 1)) {
+		if(rd==-1 || rd!=1){
 			int _errno=errno;
 			close(fd);
 			errno=_errno;
