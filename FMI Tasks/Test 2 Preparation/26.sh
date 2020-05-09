@@ -40,6 +40,6 @@ while read LINE; do
 		CNT=$( expr "${CNT}" + 1 )
 	fi
 	echo "${LINE}" | cut -d':' -f2 >> "${DIR}/${NUMBER}.txt"
-done < <(cat "${STENOGRAPH}")
+done < "${STENOGRAPH}"
 
 exit 0
