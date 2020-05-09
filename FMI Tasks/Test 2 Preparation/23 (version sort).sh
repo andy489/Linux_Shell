@@ -2,7 +2,7 @@
 # 23.sh
 # github.com/andy489
 
-[ $# -eq 2 ] || { echo Invalid number of arguments!; exit 1; }
+[ $# -eq 2 ] || { echo "Invalid number of arguments!"; exit 1; }
 
 dir="${1}"
 str="${2}"
