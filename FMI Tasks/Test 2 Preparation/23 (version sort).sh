@@ -1,5 +1,5 @@
 #!/bin/bash
-# 23.sh
+# 23.sh 1st sol
 # github.com/andy489
 
 [ $# -eq 2 ] || { echo "Invalid number of arguments!"; exit 1; }
