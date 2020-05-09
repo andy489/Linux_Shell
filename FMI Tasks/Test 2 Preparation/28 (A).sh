@@ -6,7 +6,7 @@ temp=$(mktemp)
 
 cat | egrep "^[-+]?[0-9]+$" | sort -n > "${temp}"
 
-[ "$(cat "$temp" | wc -l )" -ne 0 ] || { echo -n  "\nno valid numbers numbers"; exit 1; } 
+[ "$(cat "$temp" | wc -l )" -ne 0 ] || { echo -n  "\nno valid numbers"; exit 1; } 
 
 MAX="$(cat "$temp" | tail -n 1)"
 MIN="$(cat "$temp" | head -n 1)"
