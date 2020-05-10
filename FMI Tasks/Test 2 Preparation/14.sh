@@ -18,14 +18,14 @@ fi
 
 USERS=$(ps -e -o user= | grep -v '^_' | sort | uniq)
 
-for USER in ${USERS}; do
+for _USER in ${USERS}; do
 	USER_TOTAL_RSS=0
 	while read PID RSS; do
 		USER_TOTAL_RSS=$(expr $USER_TOTAL_RSS + $RSS)	
 		LAST_PID="${PID}"
-	done < <(ps -u "${USER}" -o pid=,rss= | sort -n -k2)
+	done < <(ps -u "${_USER}" -o pid=,rss= | sort -n -k2)
 		
-	echo "Total ${USER_TOTAL_RSS}" resident set size for user" ${USER}"
+	echo "Total ${USER_TOTAL_RSS} resident set size for user ${_USER}"
 	
 	if [ ${USER_TOTAL_RSS} -gt ${N} ]; then
 		kill -s TERM "${LAST_PID}"
