@@ -1,5 +1,5 @@
 #!/bin/bash
-# 28.sh B) smart
+# 28.sh B) smart sed + bc
 #github.com/andy489
 
 temp=$(mktemp)
