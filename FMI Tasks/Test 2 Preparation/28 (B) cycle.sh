@@ -9,9 +9,6 @@ cat | egrep "^[-+]?[0-9]+$" | sort -n > "${temp}"
 
 [ "$(cat "$temp" | wc -l )" -ne 0 ] || { echo -n  "\nno valid numbers"; exit 1; } 
 
-MAX_SUM=0
-CUR_RES=0
-
 while read NUM; do
     SUM=0
     NUM_COPY="$NUM"
