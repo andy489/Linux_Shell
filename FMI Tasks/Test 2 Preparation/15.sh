@@ -4,8 +4,8 @@
 
 [ $(id -u) -eq 0 ] || exit 0
 
-while read USER HOME; do
-        if [ ! -d "${HOME}" ] || sudo -u "${USER}" [ ! -w "${HOME}" ]; then
-                echo "${USER}"
+while read _USER HOME; do
+        if [ ! -d "${HOME}" ] || sudo -u "${_USER}" [ ! -w "${HOME}" ]; then
+                echo "${_USER}"
         fi
 done < <(cat /etc/passwd | awk -F : '{print $1,$6}')
