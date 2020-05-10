@@ -21,13 +21,13 @@ void clo(int fd1, int fd2, int fd3){
 }
 
 int main(){
-	int fd1 = -1, fd2 = -1, fd3 = -1;
-	char *f1 = "f1", *f2 = "f2", *f3 = "f3";
+   int fd1 = -1, fd2 = -1, fd3 = -1;
+   char *f1 = "f1", *f2 = "f2", *f3 = "f3";
 
-	struct stat st1;
+   struct stat st1;
    struct stat st2;
 
-	struct pair_t {
+   struct pair_t {
       uint32_t first; // start pos
       uint32_t second; // length of content
    } pair;
@@ -40,7 +40,7 @@ int main(){
       err(2,"error while stat %s", f2);
    }
 
-	if(st1.st_size % sizeof(pair) != 0){
+   if(st1.st_size % sizeof(pair) != 0){
       errx(3,"file %s is corrupted", f1);
    }
 
