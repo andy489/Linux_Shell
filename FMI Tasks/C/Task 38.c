@@ -47,7 +47,6 @@ int main(int argc, char **argv){
 		if(rd == -1){
 			err(11,"error while reading from STDIN");
 		}
-
 		exit(0);
 	}
 
@@ -56,14 +55,14 @@ int main(int argc, char **argv){
 		ssize_t len = strlen(set1);
 		ssize_t rd = -1, wr = -1;
 		char c, old_c = '\0';
-		ssize_t i, first = 1;
+		ssize_t i, flag = 1;
 		OUTTER2: while ( (rd = read(0, &c, 1)) == 1){
-			if(first) {
+			if(flag) {
 				wr = write(1, &c, 1);
 				if(wr == -1){
 					err(20,"error while writing to STDOUT");
 				}
-				first = 0;
+				flag = 0;
 				old_c = c;
 				continue;
 			}
