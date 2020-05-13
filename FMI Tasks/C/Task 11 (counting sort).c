@@ -14,7 +14,7 @@
 
 int main(int argc, char** argv){
 	if(argc != 3){
-		errx(1,"Usage: %s file.bin sorted.bin", argv[0]);
+		errx(1,"Usage: %s <file.bin> <sorted.bin>", argv[0]);
 	}	
 	char * file = argv[1], * sorted = argv[2];
 
@@ -33,7 +33,7 @@ int main(int argc, char** argv){
 	}	
 
 	const uint32_t BUF_SIZE = 2<<10;
-	uint32_t histo[SIZE] = { 0 };
+	uint8_t histo[SIZE] = { 0 };
 	uint8_t buf[BUF_SIZE];
 	ssize_t read_sz;
 	uint32_t total_sz = 0;
