@@ -15,31 +15,47 @@ int numerate = 0;
 int cnt = 1;
 
 void READ(int fd, const char * from){
-	char c;
-	ssize_t read_sz;
+    char c;
+    ssize_t read_sz;
 
-	int newline = 1;
+    int newline = 1;
 
-	while((read_sz = read(fd, &c, 1)) > 0){
-		if(read_sz == -1){
-			int _errno=errno;
-			close(fd);
-			errno=_errno;
-			err(4,"error while reading %s", from);
-		}
-		if(numerate){
-			if(newline){
-				printf("%02d %c", cnt, c);
-				++cnt;
-				newline = 0;
-			}
-			else printf("%c", c);
-			
-			if(c == '\n') newline = 1;
-		}
-		else write(1, &c, 1);
-	}
-	close(fd);	
+    while((read_sz = read(fd, &c, 1)) > 0){
+        if(numerate) {
+            if(newline) {
+                setbuf(stdout, NULL);
+                fprintf(stdout, "%02d ", cnt);
+                write(1, &c, sizeof(c));
+                ++cnt;
+                newline = 0;
+            }
+            else {
+                write(1, &c, sizeof(c));
+            }
+
+            if(c == '\n') newline = 1;
+        }
+        else write(1, &c, 1);
+    }
+    if(read_sz == -1){
+        int _errno=errno;
+        close(fd);
+        errno=_errno;
+        err(4,"error while reading %s", from);
+    }
+
+    /*
+        read ----> write
+            1)
+            printf(cnt)
+            setbuf(3)
+            write(c)
+
+            2)
+            char foo[10];
+            snprintf(foo...
+            write(FD, foo, n)
+    */
 }
 
 int main(int argc, char ** argv){
