@@ -19,7 +19,7 @@ void clo(int fd1, int fd2, int fd3, int fd4){
 
 int main(int argc, char** argv){
    if(argc !=5 ){
-      errx(1,"usage: %s f1.dat f1.idx f2.dat f2.idx", argv[0]);
+      errx(1,"usage: %s <f1.dat> <f1.idx> <f2.dat> <f2.idx>", argv[0]);
    }
 
    const char *f1_dat = argv[1], *f1_idx = argv[2];
