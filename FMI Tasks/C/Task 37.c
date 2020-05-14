@@ -51,8 +51,7 @@ int main(int argc, char **argv){
 	uint8_t buf[2<<10];
 	ssize_t rd = -1;
 	while((rd = read(fd1, &buf, sizeof(buf)))> 0){
-		int wr = write(fd2, &buf, rd);
-		if(wr == -1 || wr != rd){
+		if(write(fd2, &buf, rd) != rd){
 			const int _errno = errno;
 			close(fd1);
 			close(fd2);
@@ -91,8 +90,7 @@ int main(int argc, char **argv){
 			errno = _errno;
 			err(9,"err while lseek file %s", f2);
 		}
-		ssize_t wr = write(fd2, &fmt.new, sizeof(fmt.new));
-		if(wr == -1){
+		if(write(fd2, &fmt.new, sizeof(fmt.new)) != sizeof(fmt.new)){
 			const int _errno = errno;
 			close(fd1);
 			close(fd2);
