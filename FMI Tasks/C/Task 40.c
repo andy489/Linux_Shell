@@ -21,10 +21,7 @@ void usage() {
 }
 
 int parse_digit(char symbol) {
-	if (!isdig(symbol)) {
-		usage();
-	}
-
+	if (!isdig(symbol)) usage();
 	return symbol - '0';
 }
 
@@ -33,7 +30,6 @@ int parse_number(char** string) {
 	for (; isdig((*string)[0]); (*string)++) {
 		n = n * 10 + parse_digit((*string)[0]);
 	}
-
 	return n;
 }
 
