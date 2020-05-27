@@ -12,7 +12,7 @@ int main(int argc, char **argv){
 		errx(1,"Invalid number of arguments. Usage: %s <filename>", argv[0]);
 	}
 
-	const char* filename = argv[1];	
+	const char *filename = argv[1];	
 
 	if(execlp("ls", "ls", filename, 0) == -1){
 		err(2,"could not execlp ls");
