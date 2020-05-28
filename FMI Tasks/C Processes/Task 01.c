@@ -2,6 +2,7 @@
 	Да се напише програма на C, която изпълнява команда date.
 */
 
+// github.com/andy489
 #include <stdlib.h>
 #include <unistd.h>
 #include <err.h>
