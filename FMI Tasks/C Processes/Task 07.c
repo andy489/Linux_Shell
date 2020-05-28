@@ -35,9 +35,11 @@ int main(int argc, char **argv){
 	if(wait_code1 == -1) {
 		err(4,"could not wait first child");
 	}
-	
-	printf("first child, pid: %d, exit code: %d\n", child1, status1);
-	
+
+	if(WIFEXITED(status1)){
+		printf("first child, pid: %d, exit code: %d\n", child1, WEXITSTATUS(status1));
+	}
+
 	const pid_t child2 = fork();
 	if(child2 == -1){
 		err(5,"could not fork second process");
@@ -56,7 +58,9 @@ int main(int argc, char **argv){
 		err(7,"could not wait secont process");
 	}
 
-	printf("first child, pid: %d, exit code: %d\n", child2, status2);
+	if(WIFEXITED(status2)){	
+		printf("second child, pid: %d, exit code: %d\n", child2, WEXITSTATUS(status2));
+	}
 
 	const pid_t child3 = fork();
 	if(child3 == -1){
@@ -76,7 +80,9 @@ int main(int argc, char **argv){
 		err(10,"could not wait thord child");
 	}
 
-	printf("first child, pid: %d, exit code: %d\n", child3, status3);
+	if(WIFEXITED(status1)){
+		printf("third child, pid: %d, exit code: %d\n", child3, WEXITSTATUS(status3));
+	}
 
 	printf("finished\n");
 	exit(0);
