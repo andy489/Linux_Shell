@@ -2,6 +2,7 @@
 	Да се напише програма на C, която изпълнява команда sleep (за 60 секунди).
 */
 
+// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
