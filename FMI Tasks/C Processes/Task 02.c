@@ -2,6 +2,7 @@
 	Да се напише програма на C, която изпълнява команда ls с точно един аргумент.
 */
 
+// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <errno.h>
