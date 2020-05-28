@@ -26,12 +26,12 @@ int main(){
 		if( pid>0){
 			printf("%s%d: parent with PID %d\n", indentation, i, getpid());
 			//wait(NULL); // 1 - uncomment to order the tree
-			//
 			free(indentation);
 		} else if(pid == 0) {
 			printf("%s%d: child with PID %d\n", indentation, i, getpid());
 			free(indentation);
-			//exit(0); //2 - uncomment to create a vine
+			//exit(0); // 2 - uncomment to create a vine
 		}
 	}
+	exit(0);
 }
