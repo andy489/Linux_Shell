@@ -2,6 +2,7 @@
 	Да се напише програма на C, която създава процес дете и демонстрира принцина на конкурентност при процесите.
 */
 
+// github.com/andy489
 #include <stdlib.h>
 #include<stdio.h>
 #include <unistd.h>
