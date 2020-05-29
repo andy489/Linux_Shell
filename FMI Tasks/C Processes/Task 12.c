@@ -7,3 +7,105 @@
 */    
 
 // github.com/andy489
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+#include <err.h>
+#include <errno.h>
+
+int main(int argc, char **argv){
+	if(argc != 3){
+		errx(1, "Invalid number of arguments. Usage %s <cmd1> <cmd2>", argv[0]);
+	}
+
+	const char *cmd1 = argv[1], *cmd2 = argv[2];
+
+	ssize_t fd = open("log", O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP);
+	if(fd == -1){
+		err(1, "error while opening log file");
+	} 
+	
+	close(fd);
+
+	const pid_t child_pid1 = fork();
+	if(child_pid1 == -1){
+		err(2, "could not fork (1st child)");
+	}
+
+	if(child_pid1 == 0){
+		// we are in 1st child
+		if(execlp(cmd1, cmd1, (char *)NULL) == -1){
+			err(3, "could not execlp %s", cmd1);
+		}
+	}
+
+	int status1;
+	const pid_t wait_code1 = wait(&status1);
+	if(wait_code1 == -1){
+		err(4, "could not wait for 1st child");
+	}
+
+	if(WIFEXITED(status1)){
+		if(WEXITSTATUS(status1) == 0){
+			if((fd = open("log", O_WRONLY | O_APPEND)) == -1){
+				err(5, "error while opening log file");
+			}
+			size_t cmd1_len = strlen(cmd1);
+			ssize_t wr1 = write(fd, cmd1, cmd1_len);
+			if(wr1 == -1){
+				const int old_errno = errno;
+				close(fd);
+				errno = old_errno;
+				err(6, "could not write to log file (in 1st child)");
+			}
+			write(fd, "\n", 1); 
+		} else {
+			errx(7, "%s exit status not 0", cmd1);
+		}
+	} else {
+		errx(8, "%s did not terminate normally", cmd1);
+	}
+
+	const pid_t child_pid2 = fork();
+	if(child_pid2 == -1){
+		err(9, "could not fork (2nd child)");
+	}
+
+	if(child_pid2 == 0){
+		// we are in second child and the first is finished
+		if(execlp(cmd2, cmd2, (char *)NULL) == -1){
+			err(10, "could not execlp %s", cmd2);
+		}
+	}
+
+	int status2;
+	const pid_t wait_code2 = wait(&status2);
+	if(wait_code2 == -1){
+		err(11, "could not wait for 2nd child");
+	}
+
+	if(WIFEXITED(status2)){
+		if(WEXITSTATUS(status2) == 0){
+			if((fd = open("log", O_RDWR | O_APPEND)) == -1){
+				err(12, "error while opening log file");
+			}
+			size_t cmd2_len = strlen(cmd2);
+			ssize_t wr2 = write(fd, cmd2, cmd2_len);
+			if(wr2 == -1){
+				const int old_errno = errno;
+				close(fd);
+				errno = old_errno;
+				err(13, "could not write to log file (in 2nd child)");
+			}
+			write(fd, "\n", 1);
+		} else {
+			errx(14, "%s exit status not 0", cmd2);
+		}
+	} else {
+		errx(15, "%s did not terminate normally", cmd2);
+	}
+	exit(0);
+}
