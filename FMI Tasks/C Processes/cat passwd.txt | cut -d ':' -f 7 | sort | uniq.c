@@ -6,7 +6,7 @@
 	we transform the command pipe line into
 
 	cut -d: -f7 ./passwd.txt | sort | uniq
-									         a      b
+				 a      b
 
 	since cut can accept files as argument
 
@@ -31,7 +31,7 @@ int main(void){
 		err(1, "could not pipe");
 	}	
 
-	pid_t child_pid1 = fork();
+	const pid_t child_pid1 = fork();
 	if(child_pid1 == -1){
 		err(2, "could not fork");
 	}
@@ -52,7 +52,7 @@ int main(void){
 		err(5, "could not pipe");
 	}
 	
-	pid_t child_pid2 = fork();
+	const pid_t child_pid2 = fork();
 	if(child_pid2 == -1){
 		err(6, "could not fork");
 	}
