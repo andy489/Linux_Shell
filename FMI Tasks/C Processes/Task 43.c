@@ -2,7 +2,7 @@
 
 /*
 		cat file.txt | sort
-						     a
+			     a
 
 	we can transform the pipeline into:
 
