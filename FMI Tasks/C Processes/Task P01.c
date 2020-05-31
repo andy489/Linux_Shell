@@ -20,7 +20,7 @@ int main(int argc, char **argv){
 
 	const char *filename = argv[1];
 
-	const ssize_t fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP);
+	ssize_t fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP);
 	if(fd == -1){
 		err(2, "error while opening file %s", filename);
 	}
@@ -34,16 +34,15 @@ int main(int argc, char **argv){
 		errno = old_errno;
 		err(3, "error while writing into file %s", filename);
 	}
+	close(fd);
 
 	const pid_t child_pid = fork();
 	if(child_pid == -1){
-		const int old_errno = errno;
-		close(fd);
-		errno = old_errno;
 		err(4, "could not fork");
 	}
 
 	if(child_pid == 0){
+		ssize_t fd = open(filename, O_WRONLY | O_APPEND);
 		if(write(fd, str2, 4) != 4){
 			const int old_errno = errno;
 			close(fd);
@@ -74,6 +73,7 @@ int main(int argc, char **argv){
 		err(8, "child exit code not 0, file should be already closed");
 	}
 	
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if(write(fd, str1 + 2, 2) != 2){
 		const int old_errno = errno;
 		close(fd);
