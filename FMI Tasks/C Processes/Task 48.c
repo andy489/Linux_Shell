@@ -38,8 +38,6 @@ int main(int argc, char **argv){
 	if( *duration < '0' || *duration > '9' || duration[1]){
 		errx(2, "Invalid first argument");
 	} 
-
-	//const char *cmd = argv[2];
 	
 	int cond_old, cond_new = 0;
 	do{
