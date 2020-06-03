@@ -2,12 +2,12 @@
 # 13.sh (solution 2)
 # github.com/andy489
 
-[ $# -eq 1 ] || { echo "Invalid number of arguments"; exit 1; }
+[ $# -eq 1 ] || { echo "Invalid number of arguments. Usage: $0 <dirname>"; exit 1; }
 
-d="${1}"
+DIRNAME="${1}"
 
-[ -d "${d}" -a -r "${d}" ] || { echo "Not directory or not readable"; exit 2; }
+[ -d "${DIRNAME}" -a -r "${DIRNAME}" ] || { echo "Not directory or not readable"; exit 2; }
 
-find "${di}" -type l 2>/dev/null -print0 \
+find "${DIRNAME}" -type l -print0 2>/dev/null \
 	| xargs -0 -I {} file {} \
-	| fgrep "broken"
+	| fgrep "broken" | cut -d':' -f1
