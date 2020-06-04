@@ -2,7 +2,7 @@
 
 /*
 	gfind dir -type f -printf "%T@:%f"| sort -nr | head -1 | cut -d: -f2
-												 a		  	   b			 c
+	                                  a    	     b	       c
 	Pseudo code for the algorithm:
 
 	init1
