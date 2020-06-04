@@ -21,15 +21,15 @@ cat "${PS}" | cut -d ' ' -f 1 | uniq > "${UNIQUE_USERS}"
 
 
 echo "a)"
-while read USER; do
-    CUR_CNT=$(grep -c "${USER}" "${PS}")
+while read _USER; do
+    CUR_CNT=$(grep -c "${_USER}" "${PS}")
 
     if [ -z "${FOO_PS_CNT}" ]; then
         FOO_PS_CNT=0
     fi
 
     if [ "${CUR_CNT}" -gt "${FOO_PS_CNT}" ]; then
-        echo "${USER}"
+        echo "${_USER}"
     fi
 
 done < "${UNIQUE_USERS}"
@@ -45,7 +45,7 @@ while read PID ETIMES; do
         sleep 2
         kill -9 PID
     fi
-done < <( cat "${PS}" | fgrep "^${FOO}")
+done < <( fgrep "^${FOO}" "${PS}")
 
 rm -- "${PS}"
 rm -- "${UNIQUE_USERS}"
