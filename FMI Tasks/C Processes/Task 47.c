@@ -74,6 +74,7 @@ int main(int argc, char **argv){
 		}
 	}	
 	close(b[1]);
+	close(a[0]);
 	// ---- ---- ---- ---- 
 	int c[2];
 	if(pipe(c) == -1){
@@ -99,6 +100,7 @@ int main(int argc, char **argv){
 		}
 	}
 	close(c[1]);
+	close(b[0]);
 	if(dup2(c[0], 0) == -1){
 		err(16, "could not dup");
 	}
