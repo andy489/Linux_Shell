@@ -1,7 +1,7 @@
 // github.com/andy489
 
 /*
-	find dir -type f -printf "%T@:%f"| sort -nr | head -1 | cut -d: -f2
+	find dir -type f -printf "%T@:%p"| sort -nr | head -1 | cut -d: -f2
 	                                  a    	     b	       c
 	Pseudo code for the algorithm:
 
@@ -45,7 +45,7 @@ int main(int argc, char **argv){
 		if(dup2(a[1], 1) == -1){
 			err(4, "could not dup2");
 		}
-		if(execlp("find", "pesho is searching", dir, "-type", "f", "-printf", "%T@:%f\n", (char *)NULL) == -1){
+		if(execlp("find", "pesho is searching", dir, "-type", "f", "-printf", "%T@:%p\n", (char *)NULL) == -1){
 			err(5, "could not exec in a");
 		}
 	}
