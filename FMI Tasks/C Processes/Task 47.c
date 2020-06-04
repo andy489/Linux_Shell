@@ -53,7 +53,7 @@ int main(int argc, char **argv){
 	// ---- ---- ---- ----
 	int b[2];
 	if(pipe(b) == -1){
-		err(6, "could not pope b");
+		err(6, "could not pipe b");
 	} 
 	const pid_t child_sort = fork();
 	if(child_sort == -1){
