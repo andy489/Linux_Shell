@@ -2,10 +2,7 @@
 # 14.sh
 # github.com/andy489
 
-if [ $# -ne 1 ]; then
-	echo "Invalid number of arguments"
-	exit 1
-fi
+[ $# -eq 1 ] || { echo "Invalid number of arguments. Usage: $0 <number>"; exit 1; }
 
 [ $(id -u) -eq 0 ] || exit 0
 
@@ -16,9 +13,10 @@ if ! grep -qE '^[-+]?[0-9]+$' <(echo "${N}"); then
 	exit 3
 fi
 
-USERS=$(ps -e -o user= | grep -v '^_' | sort | uniq)
+USERS=$(mktemp)
+ps -e -o user= | sort | uniq > USERS
 
-for _USER in ${USERS}; do
+while read _USER; do
 	USER_TOTAL_RSS=0
 	while read PID RSS; do
 		USER_TOTAL_RSS=$(expr $USER_TOTAL_RSS + $RSS)	
@@ -29,7 +27,8 @@ for _USER in ${USERS}; do
 	
 	if [ ${USER_TOTAL_RSS} -gt ${N} ]; then
 		kill -s TERM "${LAST_PID}"
-		sleep 2
+		sleep 1
 		kill -s KILL "${LAST_PID}"	
 	fi
-done
+done < USERS
+rm -- USERS
