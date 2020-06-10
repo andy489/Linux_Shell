@@ -2,6 +2,7 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
+FMI>C>Processes||-|[Task 01.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2001.c)|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2001.c)
 FMI>C|Makefile|-|[Makefile](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Makefile)
 FMI>C|memory management|-|[struct padding.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2000%20(struct%20padding).c)
 FMI>C|01. append|-|[Solution 1 (O_APPEND).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append%20-%20O_APPEND).c)<br>[Solution 2 (lseek).c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20(append%20-%20lseek).c)
