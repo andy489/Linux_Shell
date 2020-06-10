@@ -19,7 +19,7 @@
 #!/bin/bash
 
 [ $# -eq 3 ] || {
-	echo "Invalid number of arguments. Usage: ${0} <dirname>."
+	echo "Invalid number of arguments. Usage: ${0} <dirname> <ext1> <ext2>."
 	exit 1
 }
 
