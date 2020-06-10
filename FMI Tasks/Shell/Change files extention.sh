@@ -14,3 +14,21 @@
     renamed '/home/students/s61000/dir/mov2.avi' -> '/home/students/s61000/dir/mov2.mp3'
     renamed '/home/students/s61000/folder/dir/deeper.avi' -> '/home/students/s61000/folder/dir/deeper.mp3'
 */
+
+
+#!/bin/bash
+
+[ $# -eq 3 ] || {
+	echo "Invalid number of arguments. Usage: ${0} <dirname>."
+	exit 1
+}
+
+DIRNAME="${1}"
+OLD="${2}"
+NEW="${3}"
+
+while read DIRPATH; do
+	for FILE in ${DIRPATH}/*.${OLD}; do
+		mv -v -- "${FILE}" "${FILE%${OLD}}${NEW}" 2> /dev/null
+	done
+done < <(find / -type d -name "${DIRNAME}" 2> /dev/null)
