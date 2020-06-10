@@ -15,7 +15,6 @@
     renamed '/home/students/s61000/folder/dir/deeper.avi' -> '/home/students/s61000/folder/dir/deeper.mp3'
 */
 
-
 #!/bin/bash
 
 [ $# -eq 3 ] || {
