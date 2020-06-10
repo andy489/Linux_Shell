@@ -2,7 +2,7 @@
 
 /*
 	cat a.txt | sort | uniq
-				 a      b
+		  a      b
 			
 	init1
 	fork
