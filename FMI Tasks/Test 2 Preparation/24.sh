@@ -12,7 +12,7 @@ total_root_rss="$(ps -u "root" -o rss= | awk '{s+=$1}END{print s}')"
 while read USER HOME; do
 
 	[ "${USER}" != "root" ] || continue
-
+	# stat --format, if not macOS
 	[ ! -d "${HOME}" ] || [ "$(stat -c "%U" "${HOME}")" != "${USER}" ] || [ ! "$(stat -c "%A" "${HOME}"| cut -c3)" = "w" ] || continue
 
 	# echo "${USER} ${HOME}"
