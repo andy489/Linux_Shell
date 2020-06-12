@@ -2,29 +2,24 @@
 # 24.sh
 # github.com/andy489
 
-#[ $(id -u) -eq 0 ] || { echo "Script $0 is not executed as root."; exit 1; }
-
-OLD_IFS="${IFS}"
-IFS=":"
+#[ $(id -u) -eq 0 ] || { echo "Script ${0} is not executed as root."; exit 1; }
 
 total_root_rss="$(ps -u "root" -o rss= | awk '{s+=$1}END{print s}')"
 
-while read USER HOME; do
+while read _USER _HOME; do
 
-	[ "${USER}" != "root" ] || continue
+	[ "${_USER}" != "root" ] || continue
 	
-	[ ! -d "${HOME}" ] || [ "$(stat -c "%U" "${HOME}")" != "${USER}" ] || [ ! "$(stat -c "%A" "${HOME}"| cut -c3)" = "w" ] || continue
+	[ ! -d "${_HOME}" ] || [ "$(stat -c "%U" "${_HOME}")" != "${_USER}" ] || [ "$(stat -c "%A" "${_HOME}"| cut -c3)" != "w" ] || continue
 
-	# echo "${USER} ${HOME}"
+	# echo "${_USER} ${_HOME}"
 
-	total_user_rss=$(ps -u "${USER}" -o rss= | awk '{s+=$1}END{print s}')
+	total_user_rss="$(ps -u "${_USER}" -o rss= | awk '{s+=$1}END{print s}')"
 	
-	if [ "${total_root_rss}" -gt "${total_user_rss}"  ]; then
-		killall -u "${USER}"
+	if [ "${total_root_rss}" -gt "${total_user_rss}" ]; then
+		killall -u "${_USER}" -m .
 		sleep 2
-		killall -u "${USER}" -s SIGKILL
+		killall -u "${_USER}" -SIGKILL -m .
 	fi
 
-done < <(cat /etc/passwd | cut -d':' -f1,6 )
-
-IFS="${OLD_IFS}"
+done < <(cut -d':' -f1,6 /etc/passwd)
