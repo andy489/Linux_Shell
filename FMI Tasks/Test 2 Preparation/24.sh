@@ -19,7 +19,7 @@ while read _USER _HOME; do
 	if [ "${total_root_rss}" -gt "${total_user_rss}" ]; then
 		killall -u "${_USER}" -m .
 		sleep 2
-		killall -u "${_USER}" -SIGKILL -m .
+		killall -u "${_USER}" -KILL -m .
 	fi
 
 done < <(cut -d':' -f1,6 /etc/passwd)
