@@ -10,7 +10,7 @@ TOTAL_ROOT_RSS="$(ps -u "root" -o rss= | awk '{s+=$1}END{print s}')"
 
 while read _USER _HOME; do
 
-	[ "${USER_UID}" != "root" ] || continue
+	[ "${USER_UID}" -ne 0 ] || continue
 	
 	[ ! -d "${_HOME}" ] || [ "$(stat -c "%u" "${_HOME}")" != "${USER_UID}" ] || [ "$(stat -c "%A" "${_HOME}"| cut -c3)" != "w" ] || continue
 
