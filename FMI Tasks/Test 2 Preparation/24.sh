@@ -8,7 +8,7 @@
 
 TOTAL_ROOT_RSS="$(ps -u "root" -o rss= | awk '{s+=$1}END{print s}')"
 
-while read _USER _HOME; do
+while read USER_UID _HOME; do
 
 	[ "${USER_UID}" -ne 0 ] || continue
 	
