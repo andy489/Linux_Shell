@@ -30,7 +30,7 @@ if validate_num "${NUM}" ; then
                                 echo "${FILE_PATH}"
                         fi
                 fi
-        done < <(find . -type f 2>/dev/null -printf "%s %p\n")          
+        done < <(find "${DIR}" -type f 2>/dev/null -printf "%s %p\n")          
 else
         echo "Second argument is not an integer!"
         exit 4
