@@ -24,9 +24,8 @@ function validate_num {
 
 if validate_num "${NUM}" ; then
 	#find . -type f 2>/dev/null -size +"${NUM}"c -printf "%f\n"
-        while read -d $'\n' LINE; do
-               read SIZE FILE_PATH
-                if validate_num "${SIZE}"; then
+        while read SIZE FILE_PATH; do
+              	if validate_num "${SIZE}"; then
                         if [ "${SIZE}" -gt "${NUM}" ]; then
                                 echo "${FILE_PATH}"
                         fi
