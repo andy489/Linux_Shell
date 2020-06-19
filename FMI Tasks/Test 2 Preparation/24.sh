@@ -2,6 +2,8 @@
 # 24.sh
 # github.com/andy489
 
+[ $# -eq 0 ] || { echo "Invalid number of arguments. Usage: $0"; exit 1; }
+
 #[ $(id -u) -eq 0 ] || { echo "Script ${0} is not executed as root."; exit 1; }
 
 total_root_rss="$(ps -u "root" -o rss= | awk '{s+=$1}END{print s}')"
