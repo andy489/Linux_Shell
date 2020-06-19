@@ -6,7 +6,7 @@
 
 #[ $(id -u) -eq 0 ] || { echo "Script ${0} is not executed as root."; exit 1; }
 
-total_root_rss="$(ps -u "root" -o rss= | awk '{s+=$1}END{print s}')"
+TOTAL_ROOT_RSS="$(ps -u "root" -o rss= | awk '{s+=$1}END{print s}')"
 
 while read _USER _HOME; do
 
@@ -16,9 +16,11 @@ while read _USER _HOME; do
 
 	# echo "${_USER} ${_HOME}"
 
-	total_user_rss="$(ps -u "${_USER}" -o rss= | awk '{s+=$1}END{print s}')"
+	TOTAL_USER_RSS="$(ps -u "${_USER}" -o rss= | awk '{s+=$1}END{print s}')"
 	
-	if [ "${total_root_rss}" -gt "${total_user_rss}" ]; then
+	[ -n "${TOTAL_USER_RSS}" ] || TOTAL_USER_RSS=0
+	
+	if [ "${TOTAL_ROOT_RSS}" -gt "${TOTAL_USER_RSS}" ]; then
 		killall -u "${_USER}" -m .
 		sleep 2
 		killall -u "${_USER}" -KILL -m .
