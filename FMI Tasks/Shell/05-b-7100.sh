@@ -24,13 +24,13 @@ function validate_num {
 
 if validate_num "${NUM}" ; then
 	#find . -type f 2>/dev/null -size +"${NUM}"c -printf "%f\n"
-        while read SIZE FILE_PATH; do
+        while read -r -d% SIZE FILE_PATH; do
               	if validate_num "${SIZE}"; then
                         if [ "${SIZE}" -gt "${NUM}" ]; then
                                 echo "${FILE_PATH}"
                         fi
                 fi
-        done < <(find "${DIR_PATH}" -type f 2>/dev/null -printf "%s %p\n")          
+        done < <(find "${DIR_PATH}" -type f 2>/dev/null -printf "%s %p%%")          
 else
         echo "Second argument is not an integer!"
         exit 4
