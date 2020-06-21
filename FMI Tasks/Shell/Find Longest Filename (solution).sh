@@ -5,8 +5,8 @@
 DIR_PATH="${1}"
 
 [ -d "${DIR_PATH}" ] || { echo "Invalid directory name"; exit 2; }
-[ -r "${DIR_PATH}" ] || { echo "Directory is not readable; exit 3"; }
-[ -x "${DIR_PATH}" ] || { echo "Directory is not searchable; exit 4"; }
+[ -r "${DIR_PATH}" ] || { echo "Directory is not readable"; exit 3; }
+[ -x "${DIR_PATH}" ] || { echo "Directory is not searchable"; exit 4; }
 
 LENGTH_FILENAME=$(mktemp)
 
