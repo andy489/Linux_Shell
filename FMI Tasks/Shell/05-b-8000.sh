@@ -17,7 +17,7 @@ for every specific user process
 _USER="${1}"
 
 if ! id "${_USER}" &>/dev/null ; then
-        echo "Invalid user!"
+        echo "Invalid username!"
         exit 2
 fi
 
@@ -28,4 +28,4 @@ ps -u "${_USER}" -o pid,rss,vsz | tail -n +2 | while read PID RSS VSZ; do
                 PROPORTION=$(echo "scale=4; $RSS / $VSZ" | bc)
         fi
         echo "${VSZ} ${PID} consume ${PROPORTION} of RSS/VSZ memory"
-done | sort -rn | cut -d' ' -f2-
+done | sort -rn -t' ' -k1 | cut -d' ' -f2-
