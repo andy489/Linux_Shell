@@ -7,7 +7,7 @@ PROCESS_FILE="$(mktemp)"
 ps -e -o pid=,ppid= > "${PROCESS_FILE}"
 
 function get_children() {
-	cat "${PROCESS_FILE}" | awk -v pid="{1}" '$2 == pid { print $1 }'
+	cat "${PROCESS_FILE}" | awk -v pid="${1}" '$2 == pid { print $1 }'
 }
 
 function count_children() {
