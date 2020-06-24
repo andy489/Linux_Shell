@@ -3,7 +3,7 @@
 # github.com/andy489
 
 function count_children() {
-        ps --ppid "${1}" | head +2 | wc -l
+        ps --ppid="${1}" | head +2 | wc -l
 }
 
 ps -eo pid=,ppid= | while read PID PPID; do
