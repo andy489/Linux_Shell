@@ -9,19 +9,19 @@ and Virtual Memory Size (memory that a process can access)
 for every specific user process
 '
 
-if [ $# -ne 1 ]; then
-        echo "Invalid number of arguments"
+[ $# -eq 1 ] || {
+        echo "Invalid number of arguments. Usage $0 <username>."
         exit 1
-fi
+}
 
-USER="${1}"
+_USER="${1}"
 
-if ! id "${USER}" &>/dev/null ; then
+if ! id "${_USER}" &>/dev/null ; then
         echo "Invalid user!"
         exit 2
 fi
 
-ps -u "${USER}" -o pid,rss,vsz | tail -n +2 | while read PID RSS VSZ; do
+ps -u "${_USER}" -o pid,rss,vsz | tail -n +2 | while read PID RSS VSZ; do
         if [ $VSZ -eq 0 ]; then
                 PROPORTION="inf"
         else
