@@ -14,7 +14,7 @@ if ! grep -qE '^[-+]?[0-9]+$' <(echo "${N}"); then
 fi
 
 USERS=$(mktemp)
-ps -e -o user= | sort | uniq > USERS
+ps -e -o user= | sort | uniq > "${USERS}"
 
 while read _USER; do
 	USER_TOTAL_RSS=0
@@ -30,5 +30,5 @@ while read _USER; do
 		sleep 1
 		kill -s KILL "${LAST_PID}"	
 	fi
-done < USERS
-rm -- USERS
+done < "${USERS}"
+rm -- "${USERS}"
