@@ -14,7 +14,7 @@ while read USER_UID _HOME; do
 	
 	[ ! -d "${_HOME}" ] || [ "$(stat -c "%u" "${_HOME}")" != "${USER_UID}" ] || [ "$(stat -c "%A" "${_HOME}"| cut -c3)" != "w" ] || continue
 
-	# echo "${_USER} ${_HOME}"
+	# echo "${USER_UID} ${_HOME}"
 
 	TOTAL_USER_RSS="$(ps -u "${USER_UID}" -o rss= | awk '{s+=$1}END{print s}')"
 	
