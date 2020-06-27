@@ -2,7 +2,7 @@
 # 17.sh
 # github.com/andy489
 
-[ $# -eq 1 ] || { echo "Invalid number of arguments"; exit 1; }
+[ $# -eq 1 ] || { echo "Invalid number of arguments. Usage: $0 <username>"; exit 1; }
 
 FOO="${1}"
 
