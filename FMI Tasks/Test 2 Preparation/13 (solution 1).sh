@@ -14,4 +14,4 @@ D="${1}"
   exit 2 
 }
 
-find "${d}" -type l -printf "%Y %p\n" 2>/dev/null | grep -e "^[NL]" | cut -c3-
+find "${D}" -type l -printf "%Y %p\n" 2>/dev/null | grep -e "^[NL]" | cut -c3-
