@@ -2,27 +2,27 @@
 # 28.sh B) smart sed + bc
 #github.com/andy489
 
-temp=$(mktemp)
-data=$(mktemp)
+TEMP=$(mktemp)
+DATA=$(mktemp)
 
-cat | egrep "^[-+]?[0-9]+$" | sort -n > "${temp}"
+cat | egrep "^[-+]?[0-9]+$" | sort -n > "${TEMP}"
 
-[ "$(cat "$temp" | wc -l )" -ne 0 ] || { echo -n  "\nno valid numbers"; exit 1; } 
+[ "$(cat "${TEMP}" | wc -l )" -ne 0 ] || { echo -n  "\nno valid numbers"; exit 1; } 
 
 while read NUM; do
-	SUM_DIGITS= $(echo ${n} | sed -E 's/(.)/\1+/g' | sed 's/.$//' |bc)
-	echo "${NUM} ${SUM_DIGITS}" >> "${data}"
-done < <(cat "${temp}")
+	SUM_DIGITS= $(echo ${n} | sed -E 's/(.)/\1+/g' | sed 's/.$//' | bc)
+	echo "${NUM} ${SUM_DIGITS}" >> "${DATA}"
+done < <(cat "${TEMP}")
 
-uniq -c "${data}" | awk '{$1=$1}1' | grep '^1' | cut -d' ' -f2,3 > "${temp}" 
-#cat "${temp}"
-largest_sum_digits_and_unique=$(cat "${temp}" | sort -t' ' -k2 | tail -1 | cut -d' ' -f2)
+uniq -c "${DATA}" | awk '{$1=$1}1' | grep '^1' | cut -d' ' -f2,3 > "${TEMP}" 
+#cat "${TEMP}"
+LARGEST_SUM_DIGITS_AND_UNIQUE=$(cat "${TEMP}" | sort -t' ' -k2 | tail -1 | cut -d' ' -f2)
 
-RES=$(cat "${temp}" | grep "${largest_sum_digits_and_unique}$" | sort -t' ' -k1 | tail -1 | cut -d' ' -f1)
+RES=$(cat "${TEMP}" | grep "${LARGEST_SUM_DIGITS_AND_UNIQUE}$" | sort -t' ' -k1 | tail -1 | cut -d' ' -f1)
 
 echo -e "\n${RES}"
 
-rm -- "${temp}"
-rm -- "${data}"
+rm -- "${TEMP}"
+rm -- "${DATA}"
 
 exit 0
