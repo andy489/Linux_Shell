@@ -10,6 +10,7 @@ cat | egrep "^[-+]?[0-9]+$" | sort -n > "${TEMP}"
 [ "$(cat "${TEMP}" | wc -l )" -ne 0 ] || { echo -n  "\nno valid numbers"; exit 1; } 
 
 while read NUM; do
+	# n=123 -> 1+2+3+ -> 1+2+3 -> 6
 	SUM_DIGITS= $(echo ${n} | sed -E 's/(.)/\1+/g' | sed 's/.$//' | bc)
 	echo "${NUM} ${SUM_DIGITS}" >> "${DATA}"
 done < <(cat "${TEMP}")
