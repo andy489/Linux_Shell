@@ -26,7 +26,7 @@ int main(int argc, char **argv){
    if (fd == -1)
       err(4, "error while opening file %s", bin);
 
-   uint8_t counting[256] = { 0 };
+   uint32_t counting[256] = { 0 };
 
    uint8_t b;
    ssize_t read_sz;
