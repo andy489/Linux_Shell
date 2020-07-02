@@ -18,7 +18,7 @@
 void copy_file_to_dir(char * src_filename, char * dest_dirname) {
 	// dest_dirname + '/' + src_filename + '\0'
 	char * dest_filename = malloc(
-		strlen(dest_dirname) + 1 +strlen(src_filename) + 1
+		strlen(dest_dirname) + 1 + strlen(src_filename) + 1
 	);
 
 	strcpy(dest_filename, dest_dirname); 
