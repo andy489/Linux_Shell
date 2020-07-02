@@ -59,9 +59,8 @@ int main(int argc, char **argv){
 	uint16_t i = 0;
 
 	uint32_t overflows = 0;
-	for (int j = 0; j< 256; ++j){
-			overflows+=level[j];
-	}
+	for (int j = 0; j< 256; ++j)
+		overflows+=level[j];
 	
 	for(; i < 256; ++i){
 		while(level[i] >= 0){
