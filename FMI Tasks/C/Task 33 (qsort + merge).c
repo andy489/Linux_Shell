@@ -206,7 +206,9 @@ int main(int argc, char **argv){
 		first condition is not true, then it will not check the second.
 	*/
 
-	if (rd1 == 1){ // we are out of the cycle and we check if the first reader has captured an element	
+	if (rd1 == 1){ 
+	/* we are out of the cycle and we check if the first reader has captured an element
+	   - here is where the real headache hides, if you do not consider it. */
 		write(fd2, &a, sizeof(a));
 		++d2;
 	}
