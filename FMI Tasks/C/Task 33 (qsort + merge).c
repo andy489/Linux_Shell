@@ -175,7 +175,7 @@ int main(int argc, char **argv){
 	size_t d1 = 0, d2 = 0, d3 = 0;
 
 	ssize_t rd1 = -1, rd2 = -1;
-	while ((rd1 = read(t1, &a, sizeof(a)) == sizeof(a)) && (rd2 = read(t2, &b, sizeof(b)) == sizeof(b))) {
+	while (((rd1 = read(t1, &a, sizeof(a))) == sizeof(a)) && ((rd2 = read(t2, &b, sizeof(b))) == sizeof(b))) {
 		if ( a <= b) {
 			write(fd2, &a, sizeof(a)); //TODO: check write
 			lseek(t2, -1 * sizeof(b), SEEK_CUR);
@@ -203,7 +203,7 @@ int main(int argc, char **argv){
 		first condition is not true, then it will not check the second.
 	*/
 
-	if (rd1 == 1){ 
+	if (rd1 == sizeof(a)){ 
 	/* we are out of the cycle and we check if the first reader has captured an element
 	   - here is where the real headache hides, if you do not consider it (just like my teacher did not). */
 		write(fd2, &a, sizeof(a));
