@@ -33,8 +33,8 @@ int main(int argc, char **argv){
 	if(stat(f3, &st3) == -1)
 		err(4, "error while stat %s", f3);
 
-	if(!(st1.st_mode & S_IRUSR) || !(st2.st_mode & S_IRUSR) || !(st3.st_mode & S_IWUSR))
-		errx(5, "%s is not readable, or %s is not readable, or %s is not writable", f1, f2, f3);
+	if(!(st1.st_mode & S_IRUSR) || !(st2.st_mode & S_IRUSR))
+		errx(5, "%s, %s or both is/are not readable", f1, f2);
 
 	struct window {
 		uint32_t x;
