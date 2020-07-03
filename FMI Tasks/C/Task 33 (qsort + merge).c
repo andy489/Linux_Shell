@@ -21,18 +21,15 @@ We must divide the original file into two parts of at most 200000000 bytes - tha
 	j = 0
 	k = 0
 	while (i < n && j < m) {
-		if A[i] <= B[j] {
+		if A[i] <= B[j] 
 			C[k++] = A[i++]
-		} else {
+		else
 			C[k++] = B[j++]
-		}
 	}
-	while (i < n) {
+	while (i < n) 
 		C[k++] = A[i++]
-	}
-	while (j < m) {
+	while (j < m) 
 		C[k++] = B[j++]
-	}
 */
 
 #include <stdlib.h>
