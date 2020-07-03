@@ -39,7 +39,6 @@ We must divide the original file into two parts of at most 200000000 bytes - tha
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <stdint.h>
 #include <err.h>
 #include <stdio.h>
 #include <errno.h>
