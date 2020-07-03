@@ -98,8 +98,8 @@ int main(int argc, char **argv){
 			sprintf(buf, "~failed to copy file %s\n", argv[i]);
 			write(2, &buf, sizeof(buf));
 		} else {
-			char buf[36 + strlen(argv[i]) + strlen(dir)];
-			sprintf(buf, "~file %s copied to file %s successfully\n", argv[i], dir);
+			char buf[35 + strlen(argv[i]) + strlen(dir)];
+			sprintf(buf, "~file %s copied to dir %s successfully\n", argv[i], dir);
 			write(1, &buf, sizeof(buf));
 		}
 	}
