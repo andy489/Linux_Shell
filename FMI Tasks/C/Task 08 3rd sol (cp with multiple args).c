@@ -17,9 +17,8 @@ char *dst(char * file, char* dir){
 
 	char *dst = malloc(len1 + 1 + len2 + 1);
 	
-	if(dst == NULL) {
+	if(dst == NULL)
 		return NULL;
-	}
 	
 	strcpy(dst, dir);
 	strcat(dst, "/");
@@ -39,9 +38,8 @@ int cpy(char *file, char* dir){
 		return 1;
 
 	ssize_t fd = open(file, O_RDONLY);
-	if(fd == -1){
+	if(fd == -1)
 		return 99; // 99 - system error
-	}
 
 	char *dest = dst(file, dir);
 	if(dest == NULL)
