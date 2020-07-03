@@ -13,7 +13,7 @@ We must divide the original file into two parts of at most 200000000 bytes - tha
 	sorted.bin - output file (file.bin with sorted uint32 elements)
 	temp1, temp2 -- temp files that will store the two parts of the original file with sorted elements
 	
-	Merging arrays a and b into c:
+	Merging arrays A and B into C:
 	A,	B -> C
 	n	m	
 	
