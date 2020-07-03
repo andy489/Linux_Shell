@@ -208,7 +208,7 @@ int main(int argc, char **argv){
 
 	if (rd1 == 1){ 
 	/* we are out of the cycle and we check if the first reader has captured an element
-	   - here is where the real headache hides, if you do not consider it. */
+	   - here is where the real headache hides, if you do not consider it (just like my teacher did not). */
 		write(fd2, &a, sizeof(a));
 		++d2;
 	}
