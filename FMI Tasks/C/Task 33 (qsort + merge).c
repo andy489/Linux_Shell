@@ -12,6 +12,7 @@ We must divide the original file into two parts of at most 200000000 bytes - tha
 	file.bin - input file that contains uint32_t elements
 	sorted.bin - output file (file.bin with sorted uint32 elements)
 	temp1, temp2 -- temp files that will store the two parts of the original file with sorted elements
+	Having those two sorted files temp1 and temp2, we can merge them into sorted.bin and have the original file sorted.
 	
 	Merging arrays A and B into C:
 	A,	B -> C
