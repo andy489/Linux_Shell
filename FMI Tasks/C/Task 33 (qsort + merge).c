@@ -203,7 +203,7 @@ int main(int argc, char **argv){
 
 		Notice that there is no other corner case, since there cannot be a case in which
 		the second reader rd2 read one uint32_t element, but the first did not - if the
-		first condition is not true, then it will not check sthe second.
+		first condition is not true, then it will not check the second.
 	*/
 
 	if (rd1 == 1){ // we are out of the cycle and we check if the first reader has captured an element	
