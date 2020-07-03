@@ -64,7 +64,7 @@ int main(int argc, char **argv){
 	
 	uint32_t numel = st.st_size / sizeof(uint32_t);
 	
-	printf("number of elements: %d\n", numel);
+	printf("total uint32_t elements: %u\n", numel);
 
 	uint32_t half = numel/2;
 	uint32_t *p = malloc(half * sizeof(uint32_t));
