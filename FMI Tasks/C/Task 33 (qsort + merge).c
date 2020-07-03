@@ -3,7 +3,7 @@
 /*
 PROBLEM:
 We have 256 MB RAM, which is 256 * 1024 * 1024 bytes = 268697600 bytes
-on the other hand we have file with max 100000000 uint32 numbers, which is 400000000 bytes,
+on the other hand we have file with max 100000000 uint32_t numbers, which equals 400000000 bytes,
 so we are 400000000 - 268697600 = 131302400 bytes short to do it with only one qsort.
 We must devide the original file into two parts of at most 200000000 bytes - that will do the trick.
 
