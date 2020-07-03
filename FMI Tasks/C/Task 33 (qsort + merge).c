@@ -189,8 +189,8 @@ int main(int argc, char **argv){
 	}
 	/*
 		printf("out of loop, final:\n");
-		printf("rd1: %d\n", rd1);
-		printf("rd2: %d\n", rd2);
+		printf("rd1: %lu\n", rd1);
+		printf("rd2: %lu\n", rd2);
 	*/
 	
 	/*
