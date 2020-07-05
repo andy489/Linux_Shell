@@ -32,7 +32,6 @@ void READ(int fd, const char * from){
             else {
                 write(1, &c, sizeof(c));
             }
-
             if(c == '\n') newline = 1;
         }
         else write(1, &c, 1);
@@ -80,11 +79,11 @@ int main(int argc, char ** argv){
 		
 		struct stat st;
 		if(stat(filepath, &st) == -1){
-		err(1, "error while stat %s", filepath);
+			err(1, "error while stat %s", filepath);
 		}
     
     	if(!S_ISREG(st.st_mode)){
-      	errx(2, "%s is nor tegular file", filepath);
+      		errx(2, "%s is nor regular file", filepath);
     	}
     
     	int fd = open(filepath, O_RDONLY);
