@@ -82,15 +82,15 @@ int main(int argc, char ** argv){
 			err(1, "error while stat %s", filepath);
 		}
     
-    	if(!S_ISREG(st.st_mode)){
-      		errx(2, "%s is nor regular file", filepath);
-    	}
+    		if(!S_ISREG(st.st_mode)){
+      			errx(2, "%s is nor regular file", filepath);
+    		}
     
-    	int fd = open(filepath, O_RDONLY);
-    	if(fd == -1){
-	     	err(3,"error opening %s", filepath);
-     	}  
-   	// exist, regular, readable
+    		int fd = open(filepath, O_RDONLY);
+    		if(fd == -1){
+	     		err(3,"error opening %s", filepath);
+     		}  
+   		// exist, regular, readable
 		READ(fd, "filepath");
 	}
 	exit(0);
