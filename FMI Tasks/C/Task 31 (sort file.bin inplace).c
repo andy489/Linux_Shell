@@ -46,7 +46,7 @@ int main(int argc, char **argv){
 	
 	while((read_sz = read(fd, &b, sizeof(b))) == sizeof(b)){ 
 		++counting[b];
-		if(counting[b] == UINT16_MAX){
+		if(counting[b] == UINT64_MAX){
 			counting[b] = 0;
 			++level[b];
 		}
