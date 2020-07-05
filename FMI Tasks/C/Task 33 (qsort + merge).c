@@ -252,6 +252,10 @@ int main(int argc, char **argv){
 	
 	printf("left B write: %ld\n", d3);
 
+	// erasing temporary files
+	unlink("temp1"); //TODO: check unlink
+	unlink("temp2"); //TODO: check unlink
+	
 	close(t1);
 	close(t2);
 	close(fd2);
