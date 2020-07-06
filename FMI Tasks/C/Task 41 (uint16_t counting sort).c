@@ -20,8 +20,7 @@ int main(int argc, char **argv){
 	if(argc != 3)
 		errx(1, "Invalid number of arguments. Usage: %s <input.bin> <output.bin>", argv[0]);
 	
-	char *input = argv[1];
-	char *output = argv[2];
+	char *input = argv[1], *output = argv[2];
 
 	struct stat st;
 
