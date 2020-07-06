@@ -8,12 +8,12 @@
 #include <fcntl.h>
 #include <stdint.h>
 #include <unistd.h>
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
 int main(int argc, char **argv){
    if(argc != 3)
-      errx(1,"Usage: %s [OPTION] SET1 [SET2]", argv[0]);
+      errx(1, "Invalid number of arguments. Usage: %s [OPTION] SET1 [SET2]", argv[0]);
 
    int d, s;
    const char *set1 = NULL, *set2 = NULL;
@@ -50,7 +50,7 @@ int main(int argc, char **argv){
             printf("%c", c);
          prev = c;
       }
-      if(rd == -1) err(3,"error while reading from STDIN");
+      if(rd == -1) err(3, "error while reading from STDIN");
    }
    else{
       if(strlen(set1) != strlen(set2))
@@ -63,7 +63,7 @@ int main(int argc, char **argv){
          else
             printf("%c", c);
       }
-      if(rd == -1) err(5,"error while reading from STDIN");
+      if(rd == -1) err(5, "error while reading from STDIN");
    }
    exit(0);
 }
