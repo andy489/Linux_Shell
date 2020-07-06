@@ -54,14 +54,19 @@ int main(int argc, char **argv){
 		err(6, "could not read from file %s into buffer", input);	
 	}
 	
-	qsort(buf, read_sz/sizeof(uint16_t), sizeof(uint16_t), cmp);
+	if(heapsort(buf, read_sz/sizeof(uint16_t), sizeof(uint16_t), cmp) == -1){
+		const int olderrno = errno;
+		close(fd_i);
+		errno = olderrno;
+		err(8, "could not heapsort uint16_t elements in buffer");
+	}
 	
 	ssize_t fd_o = open(output, O_CREAT | O_TRUNC | O_RDWR, 0644);
 	if(fd_o == -1){
 		const int olderrno = errno;
 		close(fd_i);
 		errno = olderrno;
-		err(8, "could not open file %s", output);
+		err(9, "could not open file %s", output);
 	}
 	
 	if(write(fd_o, &buf, read_sz) != read_sz){
@@ -69,7 +74,7 @@ int main(int argc, char **argv){
 		close(fd_i);
 		close(fd_o);
 		errno = olderrno;
-		err(9, "could not write to file %s", output);
+		err(10, "could not write to file %s", output);
 	}
 
 	close(fd_i);
