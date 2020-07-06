@@ -59,14 +59,12 @@ void cut(ssize_t start, ssize_t end, bool use_delim, char delim){
 	while((read_sz = read(0, &ch, sizeof(ch))) == 1){
 		if((!use_delim) || (ch == delim) || (cnt == 0))
 			++cnt;
-
 		if(ch == '\n'){
 			write(1, "\n", 1);
 			cnt = 0;
-		} else if(cnt >= start && cnt <= end){
+		} else if(cnt >= start && cnt <= end)
 			if(!((cnt == start) && (ch == delim) && use_delim))
 				write(1, &ch, 1);
-		}
 	}
 	if(read_sz == -1)
 		err(2, "could not read from stdin");
