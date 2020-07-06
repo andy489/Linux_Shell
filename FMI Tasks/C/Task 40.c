@@ -72,7 +72,6 @@ void cut(ssize_t start, ssize_t end, bool use_delim, char delim){
 		err(2, "could not read from stdin");
 }
 
-
 int main(int argc, char **argv){
 	ssize_t start = -1, end = -1;
 	char delim = '\0';
