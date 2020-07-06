@@ -2,113 +2,86 @@
 
 #include <stdlib.h>
 #include <err.h>
-#include <errno.h>
 #include <sys/stat.h>
-#include <sys/types.h>
+#include <errno.h>
 #include <fcntl.h>
+#include <sys/types.h>
 #include <unistd.h>
-#include <stdint.h>
+
+void clo(const int olderrno, ssize_t fd_p, ssize_t fd_f1, ssize_t fd_f2, const int errNO){
+	if(fd_p != -1) close(fd_p);
+	if(fd_f1 != -1) close(fd_f1);
+	if(fd_f2 != -1) close(fd_f2);
+	errno = olderrno;
+	err(errNO, "system error occured");
+}
 
 int main(int argc, char **argv){
-	if(argc != 4){
-		errx(1,"Usage: %s <patch.bin> <f1.bin> <f2.bin>", argv[0]);
-	}
+	if(argc != 4)
+		errx(1, "Invalid number of arguments. Usage: %s <patch.bin> <f1.bin> <f2.bin>", argv[0]);
 
 	const char *patch = argv[1], *f1 = argv[2];
 	char *f2 = argv[3];
 
-	struct tripe_t{
+	struct stat st_p, st_f1;
+
+	struct window{
 		uint16_t displacement;
-		uint8_t old;
+		uint8_t old;	
 		uint8_t new;
-	} fmt;
+	}__attribute__((packed))fmt; // no need for packing, just a reminder
 
-	struct stat st_p;
+	if(stat(patch, &st_p) == -1 || stat(f1, &st_f1) == -1)
+		err(2, "failed to stat one or both files %s and %s", patch, f1);
 
-	if(stat(patch, &st_p) == -1){
-		err(2,"error while stat %s", patch);
-	}
+	if(st_p.st_size % sizeof(fmt) != 0)
+		errx(3, "file %s is corrupted", patch);
 
-	off_t p_sz = st_p.st_size;
+	if(!(st_p.st_mode & S_IRUSR) || !(st_f1.st_mode & S_IRUSR))
+		errx(4, "one or both files %s and %s are not nreadable", patch, f1);
+
+	ssize_t fd_p = open(patch, O_RDONLY);
+	if(fd_p == -1)
+		err(5, "failed to open file %s", patch);
+
+	ssize_t fd_f1 = open(f1, O_RDONLY);
+	if(fd_f1 == -1)
+		clo(errno, fd_p, -1, -1, 6);
 	
-	if(p_sz % sizeof(fmt) !=0){
-		err(3, "%s file is corrupted", patch);
-	}
+	ssize_t fd_f2 = open(f2, O_CREAT | O_TRUNC | O_RDWR, st_p.st_mode);
+	if(fd_f2 == -1)
+		clo(errno, fd_p, fd_f1, -1, 7);
 
-	ssize_t fd1 = -1;
-	if( (fd1 = open(f1, O_RDONLY)) == -1 ){
-		err(4,"error while opening file %s", f1);
-	}
-
-	ssize_t fd2 = -1;
-	if((fd2 = open(f2, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR | S_IRGRP)) == -1){
-		const int _errno = errno;
-		close(fd1);
-		errno = _errno;
-		err(5,"error while opening file %s", f2);
-	}
+	uint8_t buf[1<<10], b;
+	ssize_t read_sz, write_sz;
+	// copy file f1.bin to file f2.bin
+	while((read_sz = read(fd_f1, &buf, sizeof(buf))) > 0)
+		if((write_sz = write(fd_f2, &buf, read_sz)) != read_sz)
+			clo(errno, fd_p, fd_f1, fd_f2, 8);
+	if(read_sz == -1)
+		clo(errno, fd_p, fd_f1, fd_f2, 9);
+	// end of copy (now we have duplicated file f1.bin into file f2.bin)
 	
-	uint8_t buf[2<<10];
-	ssize_t rd = -1;
-	while((rd = read(fd1, &buf, sizeof(buf)))> 0){
-		if(write(fd2, &buf, rd) != rd){
-			const int _errno = errno;
-			close(fd1);
-			close(fd2);
-			errno = _errno;
-			err(6,"error while writing to file %s", f2);
+	while((read_sz = read(fd_p, &fmt, sizeof(fmt))) == sizeof(fmt)){
+		if(lseek(fd_f1, fmt.displacement, SEEK_SET) == -1)
+			clo(errno, fd_p, fd_f1, fd_f2, 9);
+		ssize_t read_b;
+		if((read_b = read(fd_f1, &b, 1)) == 1){
+			if(fmt.old == b){
+				if(lseek(fd_f2, fmt.displacement, SEEK_SET) == -1)
+					clo(errno, fd_p, fd_f1, fd_f2, 10);
+				if((write_sz = write(fd_f2, &fmt.new, 1)) != 1)
+					clo(errno, fd_p, fd_f1, fd_f2, 11);
+			}
 		}
+		if(read_b == -1)
+			clo(errno, fd_p, fd_f1, fd_f2, 12);
 	}
-	if(rd == -1){
-		const int _errno = errno;
-		close(fd1);
-		close(fd2);
-		errno = _errno;
-		err(7,"err while reading from file %s", f1);
-	}
-	
-	ssize_t fd_p = -1;
-	if((fd_p = open(patch, O_RDONLY)) == -1){
-		const int _errno = errno;
-		close(fd1);
-		close(fd2);
-		errno = _errno;
-		err(8,"err while opening file %s", patch);
-	}
-	
-	// now we have duplicated the file f1 into f2
+	if(read_sz == -1)
+		clo(errno, fd_p, fd_f1, fd_f2, 13);
 
-	rd = -1;
-	ssize_t sz = sizeof(fmt);
-	while((rd = read(fd_p, &fmt, sz)) == sz){
-		ssize_t ls = lseek(fd2, fmt.displacement, SEEK_SET);
-		if(ls == -1){
-			const int _errno = errno;
-			close(fd1);
-			close(fd2);
-			close(fd_p);
-			errno = _errno;
-			err(9,"err while lseek file %s", f2);
-		}
-		if(write(fd2, &fmt.new, sizeof(fmt.new)) != sizeof(fmt.new)){
-			const int _errno = errno;
-			close(fd1);
-			close(fd2);
-			close(fd_p);
-			errno = _errno;
-			err(10,"err while writing to file %s", f2);
-		}
-	}
-	if(rd == -1){
-		const int _errno = errno;
-		close(fd1);
-		close(fd2);
-		close(fd_p);
-		errno = _errno;
-		err(11,"err while reading from file %s", patch);
-	}	
-	close(fd1);
-	close(fd2);
 	close(fd_p);
+	close(fd_f1);
+	close(fd_f2);
 	exit(0);
 }
