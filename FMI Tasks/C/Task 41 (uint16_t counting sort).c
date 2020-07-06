@@ -5,7 +5,7 @@
 	65535 * sizeof(uint16_t) = 65535 * 2 = 131070 bytes (MAX)
 	256 KB = 256 * 1024 = 262144 bytes RAM
 
-	NO DRAMA, we can do it with only 1 qsort, ot with counting sort.
+	NO DRAMA, we can do it with only 1 qsort, heapsort or with counting sort.
 */
 
 #include <stdlib.h>
