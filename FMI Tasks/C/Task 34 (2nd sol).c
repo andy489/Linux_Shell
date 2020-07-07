@@ -28,7 +28,7 @@ int main(int argc, char **argv){
 		err(2, "error while stat file %s", idx1);
 
 	struct window{
-   	uint16_t displacement;
+   		uint16_t displacement;
 		uint8_t len;
 		uint8_t free;
 	} __attribute__((packed)) fmt1, fmt2;
