@@ -5,25 +5,19 @@
 
 // github.com/andy489
 #include <stdlib.h>
-#include<stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#define N 10
+#define N 1000
 
-int main(){
+int main(void){
 	int status;
-	
 	if(fork() > 0){
 		wait(&status);
-		for(int i=0; i<N; ++i){
+		for(int i = 0; i < N; ++i)
 			printf("parent\n");
-		}
 	} else {
-		for(int i=0; i<N; ++i){
+		for(int i = 0; i < N; ++i)
 			printf("child\n");
-		}
-	}
-	exit(0);
+	} exit(0);
 }
-
-
