@@ -39,7 +39,7 @@ int main(int argc, char **argv){
 		err(6, "could not wait any child");
 	
 	if(WIFEXITED(status)){
-		if(!WEXITSTATUS(status)){
+		if(WEXITSTATUS(status) == 0){
 			printf("PID of first finished process: %d\n", first_finished_pid);
 			flag = 1;
 		}
