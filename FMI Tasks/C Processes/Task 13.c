@@ -12,44 +12,34 @@
 #include <stdio.h>
 
 int main(int argc, char **argv){
-	if(argc != 3){
+	if(argc != 3)
 		errx(1, "Invalid number of arguments. Usage %s <cmd1> <cmd2>", argv[0]);
-	}
 
 	const char *cmd1 = argv[1], *cmd2 = argv[2];
 
 	const pid_t child_pid1 = fork();
-	if(child_pid1 == -1){
+	if(child_pid1 == -1)
 		err(2, "could not fork (1st child)");
-	}
 
-	if(child_pid1 == 0){
-		// we are in first child process
-		if(execlp(cmd1, cmd1, (char *)NULL) == -1){
+	if(child_pid1 == 0) // we are in first child process
+		if(execlp(cmd1, cmd1, (char *)NULL) == -1)
 			err(3, "error while execlp %s", cmd1);
-		}
-	}
 
 	pid_t child_pid2 = fork();
-	if(child_pid2 == -1){
+	if(child_pid2 == -1)
 		err(4, "could not fork (2nd child)");
-	}
 
-	if(child_pid2 == 0){
-		// we are in second child process
-		if(execlp(cmd2, cmd2, (char *)NULL) == -1){
+	if(child_pid2 == 0) // we are in second child process
+		if(execlp(cmd2, cmd2, (char *)NULL) == -1)
 			err(5, "error while execlp %s", cmd2);
-		}
-	}
 	
 	int status, flag = 0;
 	const pid_t first_finished_pid = wait(&status);
-	if(first_finished_pid == -1) {
+	if(first_finished_pid == -1)
 		err(6, "could not wait any child");
-	}
 	
 	if(WIFEXITED(status)){
-		if(WEXITSTATUS(status) == 0){
+		if(!WEXITSTATUS(status)){
 			printf("PID of first finished process: %d\n", first_finished_pid);
 			flag = 1;
 		}
@@ -67,13 +57,11 @@ int main(int argc, char **argv){
 	}
 	
 	// guarantee that the children will terminate before the parent (not necessary)
-	if(wait(NULL) == -1){
+	if(wait(NULL) == -1)
 		err(7, "could not wait children");
-	}	
 
-	if(!flag){
+	if(!flag)
 		printf("-1\n");
-	}
 
 	exit(0);
 }
