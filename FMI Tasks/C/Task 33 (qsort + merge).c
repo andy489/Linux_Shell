@@ -134,7 +134,7 @@ int main(int argc, char **argv){
 	}
 
 	res = read(fd1, rp, rhalf * sizeof(uint32_t));
-	if(res != rhalf * sizeof(uint32_t)){
+	if(res != (ssize_t)(rhalf * sizeof(uint32_t))){
 		const int olderrno = errno;
 		close(fd1);
 		close(t1);
@@ -147,7 +147,7 @@ int main(int argc, char **argv){
 	qsort(rp, rhalf, sizeof(uint32_t), cmp);
 
 	res = write(t2, rp, rhalf * sizeof(uint32_t));
-	if (res != rhalf*sizeof(uint32_t)){
+	if (res != (ssize_t)(rhalf*sizeof(uint32_t))){
 		const int olderrno = errno;
 		close(fd1);
 		close(t1);
@@ -227,13 +227,13 @@ int main(int argc, char **argv){
 		d2++;
 	}
 	if (rd1 == -1){
-      const int olderrno = errno;
-      close(t1);
-      close(t2);
-      close(fd2);
-      errno = olderrno;
-      err(15, "error while reading from file temp1");
-   }
+      		const int olderrno = errno;
+      		close(t1);
+      		close(t2);
+      		close(fd2);
+      		errno = olderrno;
+      		err(15, "error while reading from file temp1");
+  	}
 	
 	printf("left A write: %ld\n", d2);
 	
@@ -242,13 +242,13 @@ int main(int argc, char **argv){
 		d3++;
 	}
 	if (rd2 == -1){
-      const int olderrno = errno;
-      close(t1);
-      close(t2);
-      close(fd2);
-      errno = olderrno;
-      err(16, "error while reading from files temp2");
-   }
+      		const int olderrno = errno;
+      		close(t1);
+      		close(t2);
+      		close(fd2);
+      		errno = olderrno;
+      		err(16, "error while reading from files temp2");
+   	}
 	
 	printf("left B write: %ld\n", d3);
 
