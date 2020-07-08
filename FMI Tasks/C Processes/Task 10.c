@@ -7,59 +7,39 @@
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
-#include <sys/wait.h>
 
 int main(int argc, char **argv){
-	if(argc != 3){
+	if(argc != 3)
 		errx(1, "Invalid number of arguments. Usage: %s <cmd1> <cmd2>", argv[0]);
-	}
 
 	const char *cmd1 = argv[1], *cmd2 = argv[2];
+	
+	const pid_t cmd1_pid = fork();
+	if(cmd1_pid == -1)
+		err(2, "could not fork for %s", cmd1);
+	
+	if(cmd1_pid == 0) // we are in child for cmd1
+		if(execlp(cmd1, cmd1, (char*)NULL) == -1)
+			err(3, "could not execlp %s", cmd1);
 
-	const pid_t child_pid1 = fork();
-	if(child_pid1 == -1){
-		err(2, "could not fork (1st child)");
-	}
+	int cmd1_stat;
+	if(wait(&cmd1_stat) == -1)
+		err(4, "could not wait child process for command %s", cmd1);
 
-	if(child_pid1 == 0){
-		// we are in first child
-		if(execlp(cmd1, "pesho_no_drama", (char *)NULL) == -1){
-			err(3, "error while execlp (1st child)");
-		}
-	}
+	if(!WIFEXITED(cmd1_stat))
+		errx(-1, "%s did not terminated normally", cmd1);
 
-	int status;
-	const pid_t wait_code1 = wait(&status);
-	if(wait_code1 == -1){
-		err(4, "could not wait for 1st child");
-	}
+	if(WEXITSTATUS(cmd1_stat))
+		errx(-1, "%s exit status not 0", cmd1); 
+		
+	const pid_t cmd2_pid = fork();
+	if(cmd2_pid == -1)
+		err(5, "could not fork for %s", cmd2);
 
-	if(!WIFEXITED(status)){
-		warnx("first command do no terminate normally");
-		exit(-1);
-	}
+	if(cmd2_pid == 0) // we are in child for cmd2
+		if(execlp(cmd2, cmd2, (char*)NULL) == -1)
+			err(6, "could not execlp %s", cmd2);
 
-	if(WEXITSTATUS(status) != 0){
-		warnx("exit code of first command was not 0");
-		exit(-1);
-	}
-
-	const pid_t child_pid2 = fork();
-	if(child_pid2 == -1){
-		err(7, "could not fork (2nd child)");
-	}
-
-	if(child_pid2 == 0){
-		// we are in second child
-		if(execlp(cmd2, "pesho_without_drama", (char *)NULL) == -1){
-			err(8, "error while execlp (2nd child)");
-		}
-	}
-
-	const pid_t	wait_code2 = wait(&status);
-	if(wait_code2 == -1){
-		err(9, "could not wait for 2nd child");
-	}	
-
+	wait(NULL);
 	exit(0);
 }
