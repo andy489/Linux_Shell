@@ -17,30 +17,21 @@ int main(int argc, char **argv){
 	for(int i = 1; i< argc; ++i){
 		const char *cmd = argv[i];
 		const pid_t child_pid = fork();
-		if(child_pid == -1){
+		if(child_pid == -1)
 			err(1, "failed to fork %s", cmd);
-		}
 		
-		if(child_pid == 0){
-			if(execlp(cmd, cmd, (char *)NULL) == -1){
+		if(child_pid == 0)
+			if(execlp(cmd, cmd, (char*)NULL) == -1)
 				err(2,"error while execlp command %s", cmd);
-			}
-		} 
+				
 		int status;
-		const pid_t wait_code= wait(&status);
-		if(wait_code == -1){
+		if(wait(&status) == -1)
 			err(2,"could not wait for current child");
-		}
 		
 		if(WIFEXITED(status)){
-			if(WEXITSTATUS(status) !=0){
-				++failed;
-			} else {
-				++successful;
-			}
-		} else {	
-			++failed;
-		}
+			if(WEXITSTATUS(status)) ++failed;
+			else ++successful;
+		} else ++failed;
 	}
 
 	printf("successful: %zu, failed: %zu\n", successful, failed);
