@@ -31,15 +31,15 @@ int main(void){
 
 	if(child_pid == 0){ // we are in child "sort"
 		close(a[0]);
-		close(1);
-		dup(a[1]);
+		close(1); // to be more precise
+		dup(a[1]); // TODO: check dup
 		
 		if(execlp("sort", "sort", "a.txt", (char *)NULL) == -1)
 			err(3, "could not exec");
 	}
 	close(a[1]);
-	close(0);
-	dup(a[0]);
+	close(0); // to be more precise
+	dup(a[0]); // TODO: check dup
 
 	if(execlp("uniq", "uniq", (char *)NULL) == -1)
 		err(4, "could not exec");
