@@ -2,7 +2,7 @@
 
 /*
 	cat a.txt | sort | uniq
-		       a      b
+		  a      b
 	
 	since sort works with files, we can rearrange the pipeline like this:
 
