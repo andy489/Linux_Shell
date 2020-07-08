@@ -10,10 +10,10 @@
 
 int main(){
 	if(fork() > 0)
-		for(int i=0; i<N; ++i)
+		for(int i=0; i < N; ++i)
 			printf("parent\n");
 	else 
-		for(int i=0; i<N; ++i)
+		for(int i=0; i < N; ++i)
 			printf("child\n");
 	exit(0);
 }
