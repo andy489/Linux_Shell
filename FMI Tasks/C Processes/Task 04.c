@@ -8,7 +8,7 @@
 #include <unistd.h>
 #define N 100000
 
-int main(){
+int main(void){
 	if(fork() > 0)
 		for(int i=0; i < N; ++i)
 			printf("parent\n");
