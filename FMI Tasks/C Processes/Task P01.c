@@ -14,40 +14,36 @@
 #include <unistd.h>
 
 int main(int argc, char **argv){
-	if(argc!=2){
-		errx(1, "Invalid number of arguments. Usage: %s <filename>", argv[0]);
-	}
+	if(argc!=2)
+		errx(1, "Invalid number of arguments. Usage: %s <filepath>", argv[0]);
 
-	const char *filename = argv[1];
+	const char *file = argv[1];
 
-	ssize_t fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP);
-	if(fd == -1){
-		err(2, "error while opening file %s", filename);
-	}
+	ssize_t fd = open(file, O_RDWR | O_CREAT | O_TRUNC, 0644);
+	if(fd == -1)
+		err(2, "error while opening file %s", file);
 
-	const char *str1 = "foo\n";
-	const char *str2 = "bar\n";
+	const char *str1 = "foo\n", *str2 = "bar\n";
 
 	if(write(fd, str1, 2) != 2){
-		const int old_errno = errno;
+		const int olderrno = errno;
 		close(fd);
-		errno = old_errno;
-		err(3, "error while writing into file %s", filename);
+		errno = olderrno;
+		err(3, "error while writing into file %s", file);
 	}
 	close(fd);
 
 	const pid_t child_pid = fork();
-	if(child_pid == -1){
+	if(child_pid == -1)
 		err(4, "could not fork");
-	}
 
 	if(child_pid == 0){
-		ssize_t fd = open(filename, O_WRONLY | O_APPEND);
+		fd = open(filename, O_WRONLY | O_APPEND);
 		if(write(fd, str2, 4) != 4){
-			const int old_errno = errno;
+			const int olderrno = errno;
 			close(fd);
-			errno = old_errno;
-			err(5, "failed to write into file %s in child process", filename);
+			errno = olderrno;
+			err(5, "failed to write into file %s in child process", file);
 		}
 		exit(0);
 	}
@@ -56,16 +52,16 @@ int main(int argc, char **argv){
 	const pid_t wait_code = wait(&child_status);
 	
 	if(wait_code == -1){
-		const int old_errno = errno;
+		const int olderrno = errno;
 		close(fd);
-		errno = old_errno;
+		errno = olderrno;
 		err(6, "could not wait for child");
 	}
 
 	if(!WIFEXITED(child_status)){
-		const int old_errno = errno;
+		const int olderrno = errno;
 		close(fd);
-		errno = old_errno;
+		errno = olderrno;
 		err(7, "child did not terminate normally");
 	}
 
@@ -75,10 +71,10 @@ int main(int argc, char **argv){
 	
 	fd = open(filename, O_WRONLY | O_APPEND);
 	if(write(fd, str1 + 2, 2) != 2){
-		const int old_errno = errno;
+		const int olderrno = errno;
 		close(fd);
-		errno = old_errno;
-		err(9, "failed to write into file %s in parent process", filename);
+		errno = olderrno;
+		err(9, "failed to write into file %s in parent process", file);
 	}
 	
 	close(fd);
