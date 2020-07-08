@@ -7,7 +7,7 @@
 	since sort works with files, we can rearrange the pipeline like this:
 
 	sort a.txt | uniq
-				  a
+		   a
 		
 	init1
 	fork
