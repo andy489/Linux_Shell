@@ -3,21 +3,16 @@
 */
 
 // github.com/andy489
-#include <stdlib.h>
 #include <err.h>
-#include <errno.h>
 #include <unistd.h>
 
 int main(int argc, char **argv){
 	if(argc != 2){
-		errx(1,"Invalid number of arguments. Usage: %s <filename>", argv[0]);
+		errx(1, "Invalid number of arguments. Usage: %s <dirpath>", argv[0]);
 	}
+		
+	const char *cmd = "ls", *dirpath = argv[1];	
 
-	const char *filename = argv[1];	
-
-	if(execlp("ls", "ls", filename, 0) == -1){
+	if(execlp(cmd, "Pesho is listing a directory content", dirpath, 0) == -1)
 		err(2,"could not execlp ls");
-	}
-	
-	exit(0);
 }
