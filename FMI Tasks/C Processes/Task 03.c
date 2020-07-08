@@ -3,14 +3,12 @@
 */
 
 // github.com/andy489
-#include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
 
-int main(){
-	if(execl("/bin/sleep", "pesho", "60", (char *)NULL) == -1){
-		err(1, "failed to execl sleep");
-	}
+int main(void){
+	const char *cmd = "sleep", *arg = "60";
 
-	exit(0);
+	if(execl(cmd, "Pesho sleeps for 60 sec", arg, (char*)NULL) == -1)
+		err(1, "could not execl %s", cmd);
 }
