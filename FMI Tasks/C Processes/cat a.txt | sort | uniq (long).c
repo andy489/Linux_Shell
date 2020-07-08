@@ -29,7 +29,7 @@ int main(void){
 
 	if(child_pid == 0){ // we are in child "cat"
 		close(a[0]);
-		dup2(a[1], 1);
+		dup2(a[1], 1); // TODO: check dup2
 		if(execlp("cat", "cat", "a.txt", (char *)NULL) == -1)
 			err(3, "could not exec");
 	}
@@ -44,15 +44,15 @@ int main(void){
 		err(5, "could not fork");
 
 	if(child_pid == 0){ // we are in child "sort"
-		dup2(a[0], 0);
+		dup2(a[0], 0); // TODO: check dup2
 		close(b[0]);
-		dup2(b[1],1);
+		dup2(b[1],1); // TODO: check dup2
 		if(execlp("sort", "sort", (char *)NULL) == -1)
 			err(6, "could not exec");
 	}
 	
 	close(b[1]);
-	dup2(b[0],0);
+	dup2(b[0],0); // TODO: check dup2
 
 	if(execlp("uniq", "uniq", (char *)NULL) == -1)
 		err(7, "could not exec");
