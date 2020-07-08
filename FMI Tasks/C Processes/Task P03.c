@@ -13,39 +13,33 @@
 #include <string.h>
 
 int main(const int argc, const char * const argv[]){
-	if(argc !=2 ){
+	if(argc !=2 )
 		errx(1, "Invalid number of arguments. Usage: %s <string>", argv[0]);
-	}
+	const char *str = argv[1];
+	int p[2];
 
-	int pf[2];
-
-	if(pipe(pf) == -1){
+	if(pipe(p) == -1)
 		err(2, "could not create pipe");
-	}
 
 	const pid_t child_pid = fork();
-	if(child_pid == -1){
+	if(child_pid == -1)
 		err(3, "could not fork");
-	}
 
-	if(child_pid == 0){
-		// we are in child process
-		close(pf[1]);
+	if(child_pid == 0){ // we are in child process
+		close(p[1]);
 		close(0);
-		dup(pf[0]);
+		dup(p[0]);
 		// dup2(pf[0], 0);
-		if(execlp("wc", "wc", "-c", (char *)NULL) == -1){
+		if(execlp("wc", "wc", "-c", (char *)NULL) == -1)
 			err(4, "could not exec");
-		}
 	}
 
-	close(pf[0]);
-	ssize_t len = strlen(argv[1]);
-	ssize_t wr_sz = write(pf[1], argv[1], len);
-	if(wr_sz != len){
+	close(p[0]);
+	ssize_t len = (ssize_t)strlen(str);
+	if(write(p[1], str, len) != len)
 		err(5, "error while writing in parent process into pipe");
-	}
-	close(pf[1]);
+
+	close(p[1]);
 	wait(NULL);
 
 	exit(0);
