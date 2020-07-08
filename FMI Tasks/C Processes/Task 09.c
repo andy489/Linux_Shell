@@ -46,8 +46,7 @@ int main(void){
 	if(child_pid2 == -1)
 		err_handler(5, "fork second child", errno, -1);
 
-	if(child_pid2 == 0){
-		// we are in second child process
+	if(child_pid2 == 0){ // we are in second child process
 		ssize_t fd2 = open("foobar.txt", O_WRONLY | O_APPEND);
 		if(fd2 == -1)
 			err_handler(6, "opening foobar.txt in second child", errno, fd2);
