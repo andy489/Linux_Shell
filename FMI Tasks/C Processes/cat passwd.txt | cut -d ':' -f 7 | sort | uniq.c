@@ -3,7 +3,7 @@
 /*
 	cat ./passwd.txt | cut -d ':' -f 7 | sort | uniq
 					
-	we transform the command pipe line into
+	we transform the command pipeline into
 
 	cut -d: -f7 ./passwd.txt | sort | uniq
 				 a      b
@@ -27,9 +27,8 @@
 
 int main(void){
 	int a[2];
-	if(pipe(a) == -1){
+	if(pipe(a) == -1)
 		err(1, "could not pipe");
-	}	
 
 	const pid_t child_pid1 = fork();
 	if(child_pid1 == -1)
@@ -40,7 +39,7 @@ int main(void){
 		if(dup2(a[1],1) == -1)
 			err(3, "could not dup");
 			
-		if(execlp("cut", "pesho", "-d:", "-f7", "./passwd.txt", (char *)NULL) == -1)
+		if(execlp("cut", "Pesho is cutting", "-d:", "-f7", "./passwd.txt", (char *)NULL) == -1)
 			err(4, "could not exec");
 	}
 	close(a[1]);
@@ -61,7 +60,7 @@ int main(void){
 		if(dup2(b[1],1) == -1)
 			err(8, "could not dup");
 
-		if(execlp("sort", "stamat", (char *)NULL) == -1)
+		if(execlp("sort", "Stamat is sorting", (char *)NULL) == -1)
 			err(9, "could not sort");
 	}
 	close(b[1]);
@@ -69,6 +68,6 @@ int main(void){
 	if(dup2(b[0], 0) == -1)
 		err(10, "could not dup");
 	
-	if(execlp("uniq", "gosho", (char *)NULL) == -1)
+	if(execlp("uniq", "Gosho filters out the repeated lines", (char *)NULL) == -1)
 		err(11, "could not exec");
 }
