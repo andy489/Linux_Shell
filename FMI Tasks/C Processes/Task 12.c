@@ -68,7 +68,7 @@ int main(int argc, char **argv){
 		err(9, "could not wait for 2nd child");
 
 	if(WIFEXITED(status2)){
-		if(!WEXITSTATUS(status2)){
+		if(WEXITSTATUS(status2) == 0){
 			if((fd = open("log", O_RDWR | O_APPEND)) == -1)
 				err(10, "error while opening log file");
 				
