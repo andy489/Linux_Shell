@@ -2,7 +2,7 @@
 
 /*
 	find <diripath> -type f -printf "%T@:%p"| sort -nr | head -1 | cut -d: -f2
-	                                        a    	     b	     c
+	                                        a    	   b	     c
 	Pseudo code for the algorithm:
 
 	init1
