@@ -1,49 +1,43 @@
 // github.com/andy489
-// first solution
+// 1st solution
 
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <err.h>
-#include <sys/wait.h>
 #include <unistd.h>
+#include <err.h>
 #include <string.h>
+#include <sys/wait.h>
 
-int main(){
+int main(void){
 	while(1){
-		if(write(1, "pesho's simple prompt: ", 23 ) == -1){
-			err(1, "could not write to stdout");
-		}
+		if(write(1, "Pesho's simple prompt: ", 23) != 23)
+			err(1, "could not write the prompt name to stdout");
 
-		char buf[1<<8];	
-		ssize_t bytes_read = read(0, &buf, sizeof(buf));
-		if(bytes_read == -1){
-			err(2, "could not read from stdin");
-		}
-		// change newline to terminating zero
-		buf[bytes_read - 1] = '\0';
+	char cmd[1<<8];
+	ssize_t read_sz = read(0, &cmd, sizeof(cmd));
+	if(read_sz == -1)
+		err(2, "could not read from stdin");
 
-		if(strcmp(buf, "exit") == 0){
-			break;
-		}
+	//changing newline to terminating zero '\n' -> '\0':
+	cmd[read_sz - 1] = '\0';
 
-		const pid_t child = fork();
-		if(child == -1){
-			warn("could not fork");
-			continue;
-		} 
-		
-		if(child == 0){
-			// we are in child process
-			if(execlp(buf, "pesho's process", (char *)NULL) == -1){
-				err(3, "could not exec");
-			}
-		}
+	if(strcmp(cmd, "exit") == 0)
+		break;
 
-		if(wait(NULL) == -1){
-			err(4, "could not wait");
-		}
+	const char *bin = "/bin/";
+	char buf[1<<9];
+	strcpy(buf,bin); // copy /bin/
+	strcat(buf,cmd); // append cmd
+
+	const pid_t child = fork();
+	if(child == -1){
+		warn("could not fork for %s", buf);
+		continue;
 	}
-	exit(0);
+
+	if(child == 0) // we are in child for exec cmd in /bin
+		if(execl(buf, "Pesho's process", (char*)NULL) == -1)
+			err(3, "could not execl %s", buf);
+	
+	if(wait(NULL) == -1)
+		err(4, "could not wait %s", buf);
+	}
 }
