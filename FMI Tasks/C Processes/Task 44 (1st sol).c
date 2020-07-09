@@ -11,7 +11,7 @@ int main(void){
 		if(write(1, "Pesho's simple prompt: ", 23) != 23)
 			err(1, "could not write the prompt name to stdout");
 
-	char cmd[1<<8];
+	char cmd[1<<5];
 	ssize_t read_sz = read(0, &cmd, sizeof(cmd));
 	if(read_sz == -1)
 		err(2, "could not read from stdin");
@@ -23,7 +23,7 @@ int main(void){
 		break;
 
 	const char *bin = "/bin/";
-	char buf[1<<9];
+	char buf[1<<6];
 	strcpy(buf,bin); // copy /bin/
 	strcat(buf,cmd); // append cmd
 
