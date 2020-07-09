@@ -24,9 +24,8 @@ void print_cmd_args(char args[][arg_size+1]){
 }
 
 void print_exec_args(char *args[max_args + 1]){
-	for(int i = 0; args[i] != NULL; ++i){
+	for(int i = 0; args[i] != NULL; ++i)
 		print_arr(args[i]);
-	}
 	write(1, "\n", 1); 
 }
 
@@ -36,15 +35,13 @@ void exec_cmd(char args[][arg_size + 1], char *cmd){
 		char *execv_args[max_args + 2];
 		execv_args[0] = cmd;
 
-		int i = 1;
-		int j = 0;
+		int i = 1, j = 0;
 		while(args[j][0] != '\0')
 			execv_args[i++] = args[j++];
 
 		execv_args[i] = NULL;
 		if(execvp(cmd, execv_args) == -1)
 			err(11, "could not exec");
-	
 		return;		
 	}
 	wait(NULL);
