@@ -1,48 +1,48 @@
 // github.com/andy489
-// second solution
-#include <err.h>
-#include <unistd.h>
+// github.com/andy489
+// 2nd solution
 #include <stdlib.h>
-#include <sys/wait.h>
+#include <unistd.h>
+#include <err.h>
 #include <string.h>
+#include <sys/wait.h>
 
-int main(){
-    char buf[1<<8];
-    int read_size;
+int main(void){
+    char buf[1<<6];
+    ssize_t read_sz;
 
-	 const char *prompt = "andy's simple prompt: ";
-	 const size_t len = strlen(prompt);
+	 const char *prompt = "Stamat's simple prompt: ";
+	 const ssize_t len = (ssize_t)strlen(prompt);
 
-    write(1, prompt, len);
+    if(write(1, prompt, len) != len)
+		err(1, "could not write prompt to stdout");
 
-    while((read_size = read(0, buf, sizeof(buf))) > 0){
-        char cmd[1<<8];
-        int i = 0;
-        for(; i < read_size; ++i){
+    while((read_sz = read(0, buf, sizeof(buf))) > 0){
+        char cmd[1<<6];
+        ssize_t i = 0;
+        for(; i < read_sz; ++i){
             if(buf[i] == ' ' || buf[i] == '\n' || buf[i] == '\t')
                 break;
             cmd[i] = buf[i];
         }
         cmd[i]='\0';
 
-        if(strlen(cmd) == 0)
+        if(strlen(cmd) == 0 || strcmp(cmd, "exit") == 0)
             break;
 
-        if(strcmp(cmd, "exit") == 0)
-            break;
+        const pid_t child = fork();
+        if(child == -1)
+            err(2, "could not fork");
 
-        pid_t child_pid = fork();
-        if(child_pid == -1)
-            err(1, "could not fork");
-
-        if(child_pid == 0){
+        if(child == 0){ // we are in child process for exec cmd
             if(execlp(cmd, cmd, (char*)NULL) == -1)
-                err(2, "could not exec: %s", cmd);
+                err(3, "could not execlp: %s", cmd);
         }
 
         if(wait(NULL) == -1)
-            err(3, "could not wait");
-        write(1, prompt, len);
+            err(4, "could not wait");
+        if(write(1, prompt, len) != len)
+		      err(5, "could not write ptompt to stdout");
     }
     exit(0);
 }
