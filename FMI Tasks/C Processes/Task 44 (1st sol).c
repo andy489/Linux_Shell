@@ -1,6 +1,7 @@
 // github.com/andy489
 // 1st solution
 
+#include <stdlib.h>
 #include <unistd.h>
 #include <err.h>
 #include <string.h>
@@ -40,4 +41,5 @@ int main(void){
 	if(wait(NULL) == -1)
 		err(4, "could not wait %s", buf);
 	}
+	exit(0);
 }
