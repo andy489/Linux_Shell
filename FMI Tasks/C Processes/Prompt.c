@@ -22,14 +22,15 @@ int main(void){
 
 		char cmd_and_args[max_args + 1][max_symbols + 1];
 	
-		char buf[1<<8];
+		char buf[1<<10];
 		int indx = 0, row = 0, n = 0; // n is number of args + cmd (here we count them)
 		ssize_t read_sz;
 		while((read_sz = read(0, buf + indx, 1)) == 1 && row <= max_args && *(buf + indx) != '\n'){
 			if(*(buf + indx) == ' ' || *(buf + indx) == '\n'){
 				++n;
-				if(n >= 7){
+				if(n > 7){
 					warnx("too much arguments");
+					read(0, buf, sizeof(buf)); // fake /dev/null
 					goto OUTER;
 				}
 				buf[indx] = '\0';
@@ -39,13 +40,14 @@ int main(void){
 				++indx;
 				if(indx > max_symbols){
 					warnx("command or argument is too long");
+					read(0, buf, sizeof(buf)); // fake /dev/null
 					goto OUTER;
 				}
 			}
 		}
 		if(read_sz == -1)
 			err(3, "could not read from stdin");
-		
+	
 		if(*(buf + indx) == '\n'){
 			++n; // don't forget to count here 
 			buf[indx] = '\0';
@@ -54,8 +56,6 @@ int main(void){
 			strcpy(cmd_and_args[row++], buf);
 		} 
 				
-		cmd_and_args[row][0]= '\0';	
-
 		// here we adjust the arguments for the execvp command	
 		char *cmd = cmd_and_args[0];
 		char *args[n + 1];
