@@ -13,6 +13,7 @@
 #define max_symbols 16
 
 int main(void){
+	OUTER:
 	while(1){
 		const char *prompt = "Andy's prompt: ";
 		ssize_t len = strlen(prompt);
@@ -27,13 +28,19 @@ int main(void){
 		while((read_sz = read(0, buf + indx, 1)) == 1 && row <= max_args && *(buf + indx) != '\n'){
 			if(*(buf + indx) == ' ' || *(buf + indx) == '\n'){
 				++n;
+				if(n >= 7){
+					warnx("too much arguments");
+					goto OUTER;
+				}
 				buf[indx] = '\0';
 				strcpy(cmd_and_args[row++], buf);
 				indx = 0;
 			} else {
 				++indx;
-				if(indx > max_symbols)
-					errx(2, "command or argument is too long");
+				if(indx > max_symbols){
+					warnx("command or argument is too long");
+					goto OUTER;
+				}
 			}
 		}
 		if(read_sz == -1)
