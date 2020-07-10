@@ -8,7 +8,7 @@ int main(int argc, char **argv){
 	if(argc !=3)
 		errx(1, "Invalid number of arguments. Usage: %s <cmd1> <cmd2>", argv[0]);
 
-   const char *cmd1 = argv[1], *cmd2 = argv[2];
+  	const char *cmd1 = argv[1], *cmd2 = argv[2];
 
 	int a[2];
 	if(pipe(a) == -1)
