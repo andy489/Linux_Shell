@@ -38,7 +38,7 @@ int main(int argc, char **argv){
 		errx(3, "file %s is corrupted", patch);
 
 	if(!(st_p.st_mode & S_IRUSR) || !(st_f1.st_mode & S_IRUSR))
-		errx(4, "one or both files %s and %s are not nreadable", patch, f1);
+		errx(4, "one or both files %s and %s are not readable", patch, f1);
 
 	ssize_t fd_p = open(patch, O_RDONLY);
 	if(fd_p == -1)
