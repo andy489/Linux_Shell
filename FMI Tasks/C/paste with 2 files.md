@@ -5,18 +5,18 @@
 * ако е подаден аргумент *-d* на командата, следващия аргумент да е разделителя и след това двата файла (виж *man paste*)
 
 
-cat a.txt
-a1 a2 a3
+cat a.txt<br>
+a1 a2 a3<brbr>
 
-cat b.txt
-b1
-b2
+cat b.txt<br>
+b1<br>
+b2<br><br>
 
-Примерени извиквания и резултатите от тях:
-*./main a.txt b.txt*
-a1 a2 a3  b1
-  b2
+Примерени извиквания и резултатите от тях:<br>
+*./main a.txt b.txt*<br>
+a1 a2 a3  b1<br>
+  b2<br><br>
 
-*./main -d : a.txt b.txt*
-a1 a2 a3:b1
+*./main -d : a.txt b.txt*<br>
+a1 a2 a3:b1<br>
 :b2
