@@ -15,7 +15,7 @@ b2<br><br>
 Примерени извиквания и резултатите от тях:<br>
 *./main a.txt b.txt*<br>
 a1 a2 a3  b1<br>
- b2<br><br>
+   b2<br><br>
 
 *./main -d : a.txt b.txt*<br>
 a1 a2 a3:b1<br>
