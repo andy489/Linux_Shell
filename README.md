@@ -3,6 +3,8 @@
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
 FMI>C>Processes| [Изпит 12.07.2020 Зад. 2](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Задaча%202.md)|-|[foo.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/foo.c)<br>[bar.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/bar.c)
+FMI>C>Processes|[Additional Task 1.md](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.c)
+FMI>C>Processes|[Additional Task 2.md](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%202.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%202.c)
 FMI>C>Processes|[Task 01.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2001.c)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2001.c)
 FMI>C>Processes|[Task 02.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2002.c)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2002.c)
 FMI>C>Processes|[Task 03.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2003.c)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2003.c)
@@ -28,7 +30,6 @@ FMI>C>Processes|[Task 45.c](https://github.com/andy489/Linux_Shell/blob/master/F
 FMI>C>Processes|[Task 46.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Exam%20problems.pdf)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2046.c)
 FMI>C>Processes|[Task 47.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Exam%20problems.pdf)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2047.c)
 FMI>C>Processes|[Task 48.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Exam%20problems.pdf)|-|[Solution 1.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2048%20(1st%20sol).c)<br>[Solution 2.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2048%20(2nd%20sol).c)<br>[test cmd for 2nd sol.sh](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2048%20test%20script%20for%202nd%20sol.sh)
-FMI>C>Processes|[Additional Task 1.md](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.c)
 FMI>C>Processes|classic deadlock example|-|[deadlock.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/classic%20deadlock%20example.c)
 FMI>C>Processes|fork-loop|-|[fork-loop.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/fork-loop.c)
 FMI>C|Makefile|-|[Makefile](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Makefile)
