@@ -2,6 +2,7 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
+FMI>C>Processes| [Изпит 12.07.2020 Зад. 2](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Задaча%202.md)|-|[foo.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/foo.c)<br>[bar.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/bar.c)
 FMI>C>Processes|[Task 01.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2001.c)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2001.c)
 FMI>C>Processes|[Task 02.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2002.c)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2002.c)
 FMI>C>Processes|[Task 03.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2003.c)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Task%2003.c)
