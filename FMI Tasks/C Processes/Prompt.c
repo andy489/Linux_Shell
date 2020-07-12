@@ -16,7 +16,7 @@ int main(void){
 	OUTER:
 	while(1){
 		const char *prompt = "Andy's prompt: ";
-		ssize_t len = strlen(prompt);
+		ssize_t len = (ssize_t)strlen(prompt);
 		if(write(1, prompt, len) != len)
 			err(1, "could not write prompt msg to stdout");
 
