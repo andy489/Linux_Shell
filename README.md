@@ -2,6 +2,7 @@
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
+FMI>OS|[Unix-like Operating Systems. Theory](https://github.com/andy489/Linux_Shell/blob/master/Theory%20OS.pdf)|-|-
 FMI>C>Processes| [Изпит 12.07.2020 Зад. 2](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Задaча%202.md)|-|[foo.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/foo.c)<br>[bar.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/bar.c)
 FMI>C>Processes|[Additional Task 1.md](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.c)
 FMI>C>Processes|[Additional Task 2.md](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%202.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%202.c)
