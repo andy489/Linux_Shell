@@ -1,4 +1,4 @@
-# BASH
+# BASH, C
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
