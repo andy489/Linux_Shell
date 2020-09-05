@@ -1,4 +1,6 @@
-# BASH, C
+## Bash (Unix shell), C
+
+*"vi has 2 modes. One that beeps at you, and another that ruins everything."*
 
 Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:
