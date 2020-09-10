@@ -11,8 +11,3 @@ arr[$i]=$line
 done
 
 echo ${arr[@]:3:5}
-
-# ---- OR
-
-arr=($(cat))
-echo ${arr[@]:3:5}
