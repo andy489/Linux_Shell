@@ -10,8 +10,3 @@ array[$i]=$line
 i+=1
 done
 echo ${array[@]}
-
-# ---- OR
-
-arr=($(cat))
-echo ${arr[@]}
