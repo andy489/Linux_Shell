@@ -1,5 +1,7 @@
 # github.com/andy489
 
+#!/bin/bash
+
 declare -a arr
 i=0
 while read line
