@@ -1,7 +1,5 @@
 # github.com/andy489
 
-#!/bin/bash
-
 num=1
 while [ $num -le 99 ]
 do
