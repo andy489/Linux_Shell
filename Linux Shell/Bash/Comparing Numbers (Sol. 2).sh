@@ -1,7 +1,5 @@
 # github.com/andy489
 
-#!/bin/bash
-
 read X
 read Y
 if [ "$X" -gt "$Y" ]; then
