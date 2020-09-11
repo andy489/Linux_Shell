@@ -4,8 +4,8 @@
 
 N|Subdomain|Challenge|Points|Solution
 :-:|:-:|:-:|:-:|:-:
--|FMI>OS|[Unix-like Operating Systems. Theory](https://github.com/andy489/Linux_Shell/blob/master/Theory%20OS.pdf)|-|-
--|Tasks Summary|[Longlist](https://github.com/andy489/Linux_Shell/blob/master/OS%20Tasks%20Longlist%20'20.pdf)|-|-
+-|FMI>OS|[Unix-like Operating Systems. Theory '20](https://github.com/andy489/Linux_Shell/blob/master/Theory%20OS.pdf)|-|-
+-|Tasks Summary|[Longlist '20](https://github.com/andy489/Linux_Shell/blob/master/OS%20Tasks%20Longlist%20'20.pdf)|-|-
 197|FMI>C>Processes| [Exam 12/07/20 Task 1](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20Exam%2012-07-2020.pdf)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20Exam%2012-07-2020%20Solution.c)<br>[Examples](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20Exam%2012-07-2020%20Examples.pdf)
 196|FMI>C>Processes| [Exam 12/07/20 Task 2](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Задaча%202.md)|-|[foo.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/foo.c)<br>[bar.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/bar.c)
 195|FMI>C>Processes|[Additional Task 1.md](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.md)|-|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%201.c)
