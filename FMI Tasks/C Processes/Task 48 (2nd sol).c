@@ -1,5 +1,5 @@
 // github.com/andy489
-// sedonc solution
+// second solution
 
 #include <stdlib.h>
 #include <unistd.h>
