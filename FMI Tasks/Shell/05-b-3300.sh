@@ -1,6 +1,5 @@
 #!/bin/bash
 # 05-b-3300
-# github.com/andy489
 
 if [ ! $# -eq 3 ]; then
 	echo "Invalid number of argumrnts!"
