@@ -3,7 +3,6 @@
   	детинския си процес да завърши своето изпълнение.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
