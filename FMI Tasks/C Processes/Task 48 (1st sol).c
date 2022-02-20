@@ -1,5 +1,6 @@
 // github.com/andy489
-// first solution
+// 1st solution
+
 #include <stdlib.h>
 #include <err.h>
 #include <errno.h>
