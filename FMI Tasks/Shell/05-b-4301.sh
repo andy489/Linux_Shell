@@ -1,6 +1,5 @@
 #!/bin/bash
 # 05-b-4301
-# github.com/andy489
 
 if [ $# -ne 3 ]; then
 	echo "Invalid number of arguments!"
