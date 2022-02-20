@@ -1,4 +1,4 @@
-# github.com/andy489
+# !/bin/bash
 
 read a
 read b
