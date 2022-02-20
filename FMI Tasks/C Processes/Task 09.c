@@ -5,7 +5,6 @@
     Променете програмата така, че да записва низовете последователно, като първия е foo.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <errno.h>
