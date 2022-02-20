@@ -1,4 +1,4 @@
-# github.com/andy489
+# !/bin/bash
 
 awk '{
     s=($2+$3+$4)/3;
