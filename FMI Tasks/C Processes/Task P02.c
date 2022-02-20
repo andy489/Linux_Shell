@@ -4,7 +4,6 @@
     да го отпечатва на стандартния изход.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
