@@ -6,7 +6,6 @@
     Ако командата завърши неуспешно, програмата уведомява потребителя чрез подходящо съобщение.
 */    
 
-// github.com/andy489
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
