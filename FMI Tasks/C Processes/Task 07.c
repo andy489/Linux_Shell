@@ -4,7 +4,6 @@
     номера на завършилия процес, както и неговия код на завършване.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
