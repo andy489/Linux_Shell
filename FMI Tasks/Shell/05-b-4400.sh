@@ -1,6 +1,5 @@
 #!/bin/bash
 # 05-b-4400.sh
-# github.com/andy489
 
 if [ $# -eq 0 ]; then
 	echo "Invalid number of arguments!"
