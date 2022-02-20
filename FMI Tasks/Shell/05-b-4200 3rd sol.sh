@@ -1,7 +1,4 @@
 #!/bin/bash
-
-# https://github.com/steneva
-
 # we assume that there is only one curly bracket per row
 
 awk 'BEGIN{level=0;maxLevel=0;}\
