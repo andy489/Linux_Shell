@@ -4,7 +4,6 @@
     където той да може да се чете от stdin. Child процесът да изпълнява wc -c.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
