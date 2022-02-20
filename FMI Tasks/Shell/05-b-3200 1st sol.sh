@@ -1,6 +1,5 @@
 #!/bin/bash
 # 05-b-3200 1st solution
-# github.com/andy489
 
 read -p "Enter full directory path: " DIR_PATH
 
