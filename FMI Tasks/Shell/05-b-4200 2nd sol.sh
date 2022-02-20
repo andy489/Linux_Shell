@@ -1,6 +1,5 @@
 #!/bin/bash
 # 05-b-4200 2nd solution
-# github.com/andy489
 
 [ $# -eq 1 ] || exit 1
 [ ! -r $1 ] || exit 2
