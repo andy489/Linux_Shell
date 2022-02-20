@@ -4,7 +4,6 @@
     Ако нито една не завърши успешно извежда -1.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <unistd.h>
 #include <err.h>
