@@ -1,6 +1,7 @@
 #!/bin/bash
 # 18.sh
 # github.com/andy489
+
 user_home=$(mktemp)
 
 cat /etc/passwd | cut -d ':' -f 1,6 | tr ':' ' ' > "${user_home}"
