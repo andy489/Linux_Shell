@@ -1,6 +1,5 @@
 #!/bin/bash
-# 13.sh solution 1
-# github.com/andy489
+# 13.sh 1st solution
   
 [ $# -eq 1 ] || { 
   echo "Invalid number of arguments. Usage: ${0} <dirname>" >&2
