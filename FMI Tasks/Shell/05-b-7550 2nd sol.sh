@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # 05-b-7550 2nd solution
 # github.com/andy489
