@@ -1,5 +1,3 @@
-# github.com/andy489
-
-#!/bin/bash
+# !/bin/bash
 
 sed 's/\bthy\b/your/gi'
