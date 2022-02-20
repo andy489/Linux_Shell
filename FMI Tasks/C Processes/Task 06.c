@@ -3,7 +3,6 @@
     и при успешното ѝ изпълнение, извежда на стандартния изход името на командата.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <unistd.h>
