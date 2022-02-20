@@ -1,5 +1,5 @@
 // github.com/andy489
-// second solution
+// 2nd solution
 
 #include <stdlib.h>
 #include <unistd.h>
