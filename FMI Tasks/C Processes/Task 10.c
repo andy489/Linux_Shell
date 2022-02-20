@@ -3,7 +3,6 @@
     Изпълнява първата. Ако тя е завършила успешно изпълнява втората. Ако не, завършва с код -1.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>
