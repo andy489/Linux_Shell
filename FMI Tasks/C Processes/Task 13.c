@@ -55,7 +55,7 @@ int main(int argc, char **argv){
 		}
 	}
 	
-	// guarantee that the children will terminate before the parent (not necessary)
+	// guarantee that the children will terminate before the parent (which is not necessary)
 	if(wait(NULL) == -1)
 		err(7, "could not wait children");
 
