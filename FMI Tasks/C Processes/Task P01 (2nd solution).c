@@ -5,7 +5,6 @@
     	- parent-а, след като изчака child процеса, записва 'o\n'
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <fcntl.h>
