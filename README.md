@@ -5,7 +5,7 @@
 <div align="center">
 
 Subdomain|Theme|Link
-:-:|:-:|:-:
+:-|:-|-:
 Theory|Unix-like Operating Systems – Theory|[**Theory (main)**](https://github.com/andy489/Linux_Shell/blob/master/Theory/OS%20Theory%20(main).pdf)<br>[Theory (additional)](https://github.com/andy489/Linux_Shell/blob/master/Theory/OS%202018-03-21%20L.pdf)<br>[The Little Book of Semaphores](https://github.com/andy489/Linux_Shell/blob/master/Theory/Little%20Book%20Of%20Semaphores.pdf)
 FMI>Tasks|All tasks included in 2020 FMI longlist|[Longlist 2020](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/OS%20Tasks%20Longlist%20'20.pdf)
 FMI>Cheat sheets|Good coders code, great coders reuse|[Bash Redirection Cheat Sheets](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Cheat%20sheets/Bash%20Redirections%20Cheat%20Sheet.pdf)<br>[vi Reference Card](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/Cheat%20sheets/Vi%20Reference%20Card.pdf)<br>[Makefile](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Makefile)
@@ -18,7 +18,7 @@ FMI>Project|[Image editor](https://github.com/andy489/Linux_Shell/blob/master/Pr
 <div align="center">
   
 N|Subdomain|Task|Solution
-:-:|:-:|:-:|:-:
+:-:|:-|:-|-:
 131|FMI>C>Processes| [Exam 2020-07-12 Task 2](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Задaча%202.md)|[foo.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/foo.c)<br>[bar.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/bar.c)
 130|FMI>C>Processes| [Exam 2020-07-12 Task 1](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20Exam%2012-07-2020.pdf)|[Examples](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Examples%20Task%2001%20Exam%2012-07-2020.pdf)<br>[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C/Task%2001%20Exam%2012-07-2020%20Solution.c)
 129|FMI>C>Processes|[Additional Task 2.md](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%202.md)|[Solution.c](https://github.com/andy489/Linux_Shell/blob/master/FMI%20Tasks/C%20Processes/Additional%20Task%202.c)
@@ -157,7 +157,7 @@ N|Subdomain|Task|Solution
 <div align="center">
   
 N|Subdomain|Challenge|Points|Solution
-:-:|:-:|:-:|:-:|:-:
+:-:|:-|:-|:-:|-:
 64|Text Processing|[Sort Command #1](https://www.hackerrank.com/challenges/text-processing-sort-1/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%231.sh)
 63|Text Processing|[Sort Command #2](https://www.hackerrank.com/challenges/text-processing-sort-2/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%232.sh)
 62|Text Processing|[Sort Command #3](https://www.hackerrank.com/challenges/text-processing-sort-3/problem)|1|[Solution.sh](https://github.com/andy489/Linux_Shell/blob/master/Linux%20Shell/Text%20Processing/Sort%20Command%20%233.sh)
