@@ -1,6 +1,5 @@
 #!/bin/bash
 # 18.sh
-# github.com/andy489
 
 user_home=$(mktemp)
 

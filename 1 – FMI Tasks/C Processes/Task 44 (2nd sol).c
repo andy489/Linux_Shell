@@ -1,4 +1,3 @@
-// github.com/andy489
 // 2nd solution
 
 #include <stdlib.h>

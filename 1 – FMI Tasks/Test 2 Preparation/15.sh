@@ -1,6 +1,5 @@
 #!/bin/bash
 # 15
-# github.com/andy489
 
 [ $(id -u) -eq 0 ] || exit 0
 

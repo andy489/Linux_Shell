@@ -1,6 +1,5 @@
 #!/bin/bash
 # 28.sh B) extract last digit
-#github.com/andy489
 
 temp=$(mktemp)
 data=$(mktemp)

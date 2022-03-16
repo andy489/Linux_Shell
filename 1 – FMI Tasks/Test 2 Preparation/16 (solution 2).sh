@@ -1,6 +1,5 @@
 #!/bin/bash
 # 16.sh
-# github.com/andy489
 
 [ $# -eq 3 ] || { 
 echo "Invalid number of arguments. Usage: $0 <filename> <str1> <str2>" 

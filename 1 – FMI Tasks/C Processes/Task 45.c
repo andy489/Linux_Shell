@@ -1,5 +1,3 @@
-// github.com/andy489
-
 /*
     cut -d: -f7 /etc/passwd | sort | uniq -c | sort
                             a      b         c

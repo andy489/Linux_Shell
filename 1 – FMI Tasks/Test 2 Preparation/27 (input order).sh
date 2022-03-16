@@ -1,6 +1,5 @@
 #!/bin/bash
 # 27.sh 2nd sol
-# github.com/andy489
 
 [ $# -eq 2 ] || { echo "Usage: ${0} <a.csv> <b.csv>"; exit 1; }
 

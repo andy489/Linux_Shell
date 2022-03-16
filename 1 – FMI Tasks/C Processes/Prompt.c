@@ -1,5 +1,3 @@
-// github.com/andy489
-
 #include <stdlib.h>
 #include <err.h>
 #include <sys/stat.h>

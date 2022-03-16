@@ -1,6 +1,5 @@
 #!/bin/bash
 # 25.sh
-# github.com/andy489
 
 [ $# -eq 1 ] || { echo "Usage: ${0} <LOGDIR>"; exit 1; }
 

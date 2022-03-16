@@ -1,6 +1,5 @@
 #!/bin/bash
 # 22.sh
-# github.com/andy489
 
 if [ $# -eq 0 ] || [ $# -gt 2 ]; then
 	echo "Invalid number of arguments!"

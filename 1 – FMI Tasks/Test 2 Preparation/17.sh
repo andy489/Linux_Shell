@@ -1,6 +1,5 @@
 #!/bin/bash
 # 17.sh
-# github.com/andy489
 
 [ $# -eq 1 ] || { echo "Invalid number of arguments. Usage: $0 <username>"; exit 1; }
 

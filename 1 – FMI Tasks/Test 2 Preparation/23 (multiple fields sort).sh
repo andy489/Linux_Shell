@@ -1,6 +1,5 @@
 #!/bin/bash
 # 23.sh 2nd sol
-# github.com/andy489
 
 [ $# -eq 2 ] || { echo "Usage: ${0} <dir> <str>"; exit 1; }
 

@@ -1,6 +1,5 @@
 #!/bin/bash
 # 29.sh
-# github.com/andy489
 
 [ $# -ne 0 ] || { echo "Usage: ${0} [-n N] FILE1..."; exit 1; }
 

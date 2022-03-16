@@ -1,6 +1,5 @@
 #!/bin/bash
 # 19.sh
-# github.com/andy489
 
 num=""
 

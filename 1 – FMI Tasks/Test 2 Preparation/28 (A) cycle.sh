@@ -1,6 +1,5 @@
 #!/bin/bash
 # 28.sh A) cycle
-# github.com/andy489
 
 TEMP=$(mktemp)
 

@@ -1,5 +1,3 @@
-// github.com/andy489
-
 /*
 	cat a.txt | sort | uniq
 		  a      b

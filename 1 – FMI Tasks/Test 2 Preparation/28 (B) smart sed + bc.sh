@@ -1,6 +1,5 @@
 #!/bin/bash
 # 28.sh B) smart sed + bc
-#github.com/andy489
 
 TEMP=$(mktemp)
 DATA=$(mktemp)

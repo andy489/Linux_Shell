@@ -1,6 +1,5 @@
 #!/bin/bash
 # 20.sh
-# github.com/andy489
 
 [ $# -eq 3 ] || { echo "Usage: $0 <dirname> <dirname> <string>"; exit 1; }
 

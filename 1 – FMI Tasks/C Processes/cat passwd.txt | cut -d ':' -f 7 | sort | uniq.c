@@ -1,5 +1,3 @@
-// github.com/andy489
-
 /*
 	cat ./passwd.txt | cut -d ':' -f 7 | sort | uniq
 			 a		   b      c	

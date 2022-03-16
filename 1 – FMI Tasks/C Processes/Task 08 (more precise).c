@@ -5,7 +5,6 @@
     и го извежда на стандартния изход, добавяйки по един интервал между всеки два символа.
 */
 
-// github.com/andy489
 #include <stdlib.h>
 #include <err.h>
 #include <unistd.h>

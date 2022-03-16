@@ -1,6 +1,5 @@
 #!/bin/bash
 # 26.sh
-# github.com/andy489
 
 [ $# -eq 2 ] || { echo "Usage: ${0} <stenograph.txt> <dir>"; exit 1; }
 

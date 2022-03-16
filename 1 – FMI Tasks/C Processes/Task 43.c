@@ -1,5 +1,3 @@
-// github.com/andy489
-
 /*
 	cat file.txt | sort
 	             a
