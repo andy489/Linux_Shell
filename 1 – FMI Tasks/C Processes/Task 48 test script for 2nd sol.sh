@@ -1,5 +1,4 @@
 #!/bin/bash
-# github.com/andy489
 
 FILE="tmp.txt"
 
