@@ -1,5 +1,3 @@
-// github.com/andy489
-
 /*
 PROBLEM:
 We have 256 MB RAM, which is 256 * 1024 * 1024 bytes = 268697600 bytes
