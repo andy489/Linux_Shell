@@ -1,6 +1,5 @@
 #!/bin/bash
 # Image editor: crop [ipoint median_faces rect_faces] 
-# github.com/andy489
 
 set -euo pipefail
 
