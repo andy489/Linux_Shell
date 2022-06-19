@@ -43,5 +43,5 @@ nl -n rn -s'. ' books.txt | awk '{$2=$3=$4=""}1' | tr -s ' ' | sort -t' ' -k2
 Трети начин:
 
 ```sh
-cut -d' ' -f4- books.txt | awk'{print NR". ",$0} | sort -t' ' -k2
+cut -d' ' -f4- books.txt | awk '{print NR". ",$0}' | sort -t' ' -k2
 ```
